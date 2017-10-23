@@ -1,0 +1,112 @@
+/*@font-face {
+  font-family: 'FootIcons';
+  src:  url('fonts/FootIcons.eot?chzeuh');
+  src:  url('fonts/FootIcons.eot?chzeuh#iefix') format('embedded-opentype'),
+    url('fonts/FootIcons.ttf?chzeuh') format('truetype'),
+    url('fonts/FootIcons.woff?chzeuh') format('woff'),
+    url('fonts/FootIcons.svg?chzeuh#FootIcons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}*/
+
+[class^="foot"], [class*=" foot"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'FootIcons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.footd-building:before {
+  content: "\e900";
+}
+.footclock-circular-outline:before {
+  content: "\e901";
+}
+.footclose-envelope:before {
+  content: "\e902";
+}
+.footdepartures:before {
+  content: "\e903";
+}
+.footempty-shopping-cart:before {
+  content: "\e904";
+}
+.footflight:before {
+  content: "\e905";
+}
+.footfootball-award-with-white-details:before {
+  content: "\e906";
+}
+.footfootball-field .path1:before {
+  content: "\e907";
+  color: rgb(124, 204, 146);
+}
+.footfootball-field .path2:before {
+  content: "\e908";
+  margin-left: -1em;
+  color: rgb(100, 195, 125);
+}
+.footfootball-field .path3:before {
+  content: "\e909";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.footfootball-field .path4:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.footfootball-field .path5:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.footfootball-field .path6:before {
+  content: "\e90c";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.footicon:before {
+  content: "\e90d";
+}
+.footright-arrow-(1):before {
+  content: "\e90e";
+}
+.footright-arrow:before {
+  content: "\e90f";
+}
+.footroad-map:before {
+  content: "\e910";
+}
+.footrunning-sportive-shoe-for-soccer-players:before {
+  content: "\e911";
+}
+.footsearch:before {
+  content: "\e912";
+}
+.footsoccer-athlete:before {
+  content: "\e913";
+}
+.footsoccer-world-competition-program-on-tv-monitor-screen:before {
+  content: "\e914";
+}
+.footsports-t-shirt:before {
+  content: "\e915";
+}
+.foottelephone:before {
+  content: "\e916";
+}
+.foottransfer:before {
+  content: "\e917";
+}
+.footworld-cup:before {
+  content: "\e918";
+}

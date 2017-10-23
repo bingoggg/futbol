@@ -1,0 +1,708 @@
+@import "../plugins/bower/bourbon/app/assets/stylesheets/bourbon"
+@import "vars"
+@import "fonts"
+@import "custom-mixins"
+//Custom styles here
+
+//Header
+*
+  margin: 0
+  padding: 0
+
+
+html, body, .wrapper
+  width: 100%
+  height: 100%
+  -webkit-font-smoothing: subpixel-antialiased 
+  -webkit-backface-visibility: hidden
+  -moz-backface-visibility:    hidden
+  -ms-backface-visibility:     hidden
+
+html
+  font-size: 16px
+  @include respond-to ($tablet-portrait)
+    font-size: 15px
+  @include respond-to ($phone)
+    font-size: 14px
+body
+  @include font-weight(regular)
+  color: $black
+  .wrapper
+    height: auto
+    min-height: 100%
+//Hid
+.hid
+  overflow: hidden // For fix
+//Header
+header.nav-top
+  height: rem(86px)
+  width: 100%
+  overflow: hidden
+  z-index: 99
+  color: $white
+  .nav
+    line-height: rem(86px)
+  .logo
+    a
+      padding: 15px 50px
+      font-size: rem(24px)
+      border: rem(1px) solid $default-color
+      border-radius: rem(5px)
+  .world-cup
+    margin-left: rem(36px)
+  .phone
+    margin-left: rem(32px)
+    p.mob
+      font-size: rem(18px)
+      @include font-weight(bold)
+      color: $black
+      &:before
+        content: "\e916"
+        font-family: 'FootIcons'
+        padding-right: rem(15px)
+        font-size: rem(16px)
+  .callback
+    margin-left: rem(30px)
+    a
+      font-size: rem(14px)
+      padding: rem(10px) rem(15px)
+      color: $white
+      @include linear-gradient-top(#2F4785,#3A59A6)
+      @include box-shadow(2px 2px 5px 0px rgba(0,0,0,0.1))
+      border-radius: rem(5px)
+      &:hover,&:active
+        @include linear-gradient-top(#25396B,#334e91)
+        text-decoration: none
+        @include box-shadow(2px 2px 5px 0px rgba(0,0,0,0.25))
+  .search
+    color: $black
+    margin-left: rem(25px)
+  .cart
+    color: $black
+    margin-left: rem(25px)
+    font-weight: bold
+    font-size: rem(16px)
+    p
+      span
+        font-size: rem(18px)
+  .ib
+    display: inline-block
+    &.lhn
+      line-height: normal
+      &.mid
+        vertical-align: middle
+//Main class
+.Main
+  //Nav
+  nav
+    //text-align: center
+    background-color: $bg-c1
+    ul.main-nav
+      text-align: justify
+      height: rem(65px)
+      /*display: inline-table*/
+      &:before
+        content: ''
+        display: block
+        width: 100%
+        height: 0
+      &:after
+        width: 100%
+        height: 0
+        visibility: visible
+        overflow: hidden
+        content: ''
+        display: inline-block
+      li
+        text-align: center
+        display: inline-block
+        vertical-align: middle
+        height: inherit
+        position: relative
+        &:last-child
+          a
+            font-size: rem(8px)
+            i
+              padding-left: rem(5px)
+              &:first-child
+                padding-left: 0
+        a
+          display: table-cell
+          color: $white
+          padding: rem(5px) rem(15px)
+          text-align: center
+          font-size: rem(14px)
+          height: inherit
+          vertical-align: middle
+          &:hover
+            background-color: $bg-c2
+            text-decoration: none
+          span
+            display: block
+            font-size: rem(36px)
+  a.spoiler-menu
+    font-size: rem(14px)
+    color: $white
+    padding: rem(3px) 0 rem(5px) 0
+    background-color: $bg-c2
+    display: block
+    text-align: center
+    @include font-weight(bold)
+    &:hover
+      background-color: $bg-c1
+    &:after
+      content: '\f107'
+      font-family: 'FontAwesome'
+      padding-left: rem(10px)
+  //Content class
+  .Content
+    background-image: url("/catalog/img/9.jpg")
+    padding-bottom: 30px
+    .bg
+      background-color: $white
+  //Slider
+  section.slider
+    height: rem(438px)
+    .owl-carousel
+      height: inherit
+      .owl-stage-outer
+        height: inherit
+        .owl-stage
+          height: inherit
+          .owl-item
+            height: inherit
+            .item-c
+              height: inherit
+              background-size: cover
+              background-position: 50%
+              .text-about
+                max-width: rem(335px)
+                margin-left: rem(105px)
+                padding-top: rem(105px)
+                height: 100%
+                @include respond-to($tablet-portrait)
+                  margin: 0
+                  padding-top: 50%
+                  max-width: 100%
+                p
+                  font-size: rem(36px)
+                  color: $white
+                  margin-bottom: rem(45px)
+                a.button-sl
+                  font-size: rem(18px)
+                  @include font-weight(roboto)
+                  color: $white
+                  margin: rem(30px) 0 0 0
+                  padding: rem(20px) rem(35px)
+                  @include box-shadow(2px 6px 6px -2px rgba(0,0,0,0.22))
+                  border-radius: rem(5px)
+                  background-color: #2f4785
+                  @include linear-gradient-top(#2F4785,#3A59A6)
+                  &:hover,&:active
+                    @include linear-gradient-top(#25396B,#334e91)
+                    text-decoration: none
+                    @include box-shadow(2px 6px 6px -2px rgba(0,0,0,0.32))
+      .owl-nav
+        position: absolute
+        z-index: 10
+        width: 100%
+        top: 42%
+        height: 0px
+        box-sizing: border-box
+        padding: 0px 30px
+        @include respond-to($phone)
+          display: none
+        .owl-prev
+          float: left
+        .owl-next
+          float: right
+        .owl-prev, .owl-next
+          color: $white
+          margin: 0
+          padding: 0
+          background: none
+          border-radius: 0
+          .btn
+            &.btn-primary
+              font-size: rem(24px)
+              font-weight: bold
+              border-radius: 100%
+              padding: rem(10px) rem(20px)
+              background-color: #ddd
+              background-color: rgba(221,221,221,.39) //dddd
+              &:hover,&:active
+                background-color: $white
+                color: $link-bg-hv-sl
+              i.fa-angle-right
+                padding-left: rem(2px)
+              i.fa-angle-left
+                padding-right: rem(2px)
+
+      .owl-dots
+        position: absolute
+        z-index: 10
+        width: 100%
+        bottom: 0
+        .owl-dot
+          &.active
+            span
+              background: $link-hover-slider
+          span
+            margin: rem(5px) rem(3px)
+            background: $white
+
+
+  //Main Tag
+  main
+    margin: rem(40px) 0 0 0
+    @include respond-to($large-desktop)
+      margin: rem(40px) 0 0 rem(50px)
+    h1
+      text-transform: uppercase
+      font-size rem(24px)
+      @include font-weight(bold)
+      margin: 0 0 rem(20px) 0
+    .news
+      //Mini-news
+      &.mini-news
+        .block
+        .big-img
+          width: 100%
+          @include respond-to($large-desktop)
+            max-width: rem(448px)
+            float: left
+            img
+              height: rem(300px)
+        .news-right
+          article
+            width: 100%
+            background-color: $bg-c1
+            border-bottom: rem(1px) solid $light-line
+            padding: rem(14px) rem(12px) rem(7px)
+            &:hover
+              background-color: $hover-art
+            h2
+              font-size: rem(16px)
+              @include font-weight(bold)
+              line-height: rem(16px)
+              padding-bottom: rem(10px)
+              a
+                color: $text-c1
+            time
+              color: $text-c1
+              &:before
+                content: "\e901"
+                font-family: 'FootIcons'
+                padding-right: 6px
+            @include respond-to($large-desktop)
+              height: 100px
+              float: left
+              max-width: rem(252px)
+              padding: rem(14px) rem(12px) 0
+              &:last-child
+                border-bottom: none
+              &:hover
+                background-color: $hover-art
+              h2
+                font-size: rem(14px)
+            @include respond-to($phone)
+              h2
+                font-size: rem(14px)
+      //H-news class
+      &.h-news
+        margin-top: rem(10px)
+        width: 100%
+        article
+          margin-left: rem(7px)
+          display: inline-block
+          @include respond-to($bootsrap-tablet-tmp)
+          max-width: rem(199px)
+          margin-left: rem(5px)
+          @include respond-to($bootsrap-tablet-max)
+            max-width: 100%
+            margin: rem(15px) 0
+          @include respond-to($large-desktop)
+            max-width: rem(225px)
+          figure
+            img
+              width: 100%
+              height: rem(156px)
+          @include respond-to($tablet-portrait)
+          &:first-child
+            margin-left: 0
+          header
+            h2
+              font-size: rem(16px)
+              @include font-weight(bold)
+              color: $black
+              padding: rem(8px) 0 rem(8px) 0
+              a
+                color: $black
+                &:hover,&:active
+                  color: $link-c1
+                  text-decoration: none
+
+          section.post-about
+            p
+              font-size: rem(14px)
+          footer
+            p
+              padding-top: rem(15px)
+              color: $gray
+              font-size: rem(12px)
+              time
+                &:before
+                  content: "\e901"
+                  font-family: 'FootIcons'
+                  padding-right: rem(6px)
+      //H-block
+      &.h-block
+        margin-bottom: rem(20px)
+        a
+          article
+            @include box-shadow(2px 2px 5px 0px rgba(0,0,0,0.1))
+            margin-left: rem(5px) !important
+            @include respond-to($large-desktop)
+              margin-left: rem(8px) !important
+            @include respond-to($tablet-portrait)
+              margin-left: 0 !important
+            &:hover,&:active
+              @include box-shadow(3px 3px 5px 0px rgba(0,0,0,0.15))
+              header
+                h2
+                  color: $link-h-block
+          &:first-child
+            article
+              margin-left: 0 !important
+          header
+            h2
+              padding: rem(10px) rem(10px)
+          section
+            p
+              padding: 0 rem(10px)
+              color: #000
+          footer
+            p
+              padding: rem(10px) rem(10px)
+
+
+      //V-news
+      &.v-news
+        article
+          margin: rem(5px) 0
+          .left
+            float: left
+          .right
+            float: right
+            max-width: rem(370px)
+          figure
+            max-width: rem(300px)
+            height: rem(202px)
+            margin-top: rem(5px)
+          header
+            h2
+              @include font-weight(bold)
+              font-size: rem(18px)
+              padding-bottom: rem(12px)
+              a
+                @include font-weight(bold)
+                font-size: rem(18px)
+                padding-bottom: rem(12px)
+                color: $black
+                &:hover,&:active
+                  text-decoration: none
+                  color: $link-h-news-v
+          section
+            margin-bottom: rem(5px)
+            p
+              font-size: rem(14px)
+              line-height: rem(18px)
+          footer
+            p
+            color: $gray
+            font-size: rem(12px)
+            time
+              &:before
+                content: "\e901"
+                font-family: 'FootIcons'
+                padding-right: 6px
+          @include respond-to($large-desktop-max)
+            margin: rem(15px) 0
+            .left, .right
+              display: block
+              float: none
+              max-width: 100%
+            .right
+              margin-top: rem(5px)
+            figure
+              max-width: 100%
+              height: auto
+              img
+                max-height: rem(300px)
+            header
+            section
+            footer
+
+
+hr
+  margin: 15px 0
+  border-top: 1px solid #aeaeae
+footer.foooter
+  background-image: url("/catalog/img/foot.jpg")
+  -webkit-background-size: cover
+  background-size: cover
+  .pt-f
+    padding-top: rem(35px)
+    hr
+      margin-top: rem(20px)
+      border-top: 1px solid #4b4e5b
+  h4.name-site
+    text-align: center
+    color: $white
+    @include font-weight(ubuntu)
+    font-size: rem(30px)
+    text-transform: uppercase
+    margin-bottom: rem(15px)
+  p.about-site
+    color: $white
+    font-size: rem(13px)
+    max-width: rem(320px)
+    @include  font-weight(lato)
+    margin: auto
+    margin-bottom: rem(25px)
+    @include respond-to($large-desktop-max)
+      text-align: center
+  .social
+    p
+      color: $social-foot-t
+      text-transform: uppercase
+      text-align: center
+      @include font-weight(roboto)
+      font-weight: bold
+    ul.social-links
+      text-align: center
+      li
+        display: inline-block
+        width: rem(56px)
+        @include respond-to($large-desktop-max)
+          width: rem(49px)
+        a
+          i
+            font-size: rem(24px)
+            color: $white
+            padding: rem(10px)
+            border-radius: 50%
+            margin: rem(15px) 0 0 rem(10px)
+            @include respond-to($large-desktop-max)
+              font-size: rem(16px)
+          i.fa-vk
+            background-color: #4d76a1
+          i.fa-facebook
+            background-color: #3b5998
+            padding: rem(10px) rem(15px)
+          i.fa-instagram
+            background-color: #6c27b3
+            padding: rem(10px) rem(12px)
+          i.fa-youtube-play
+            background-color: #d42428
+  h5
+    font-size: rem(16px)
+    color: $white
+    margin-bottom: rem(25px)
+  .pages
+    ul.pages-links
+      list-style: none
+      li
+        text-decoration: none
+        padding-bottom: rem(5px)
+        a
+          color: $white
+  .foooter-col-2
+    margin-left: rem(30px)
+    @include respond-to($large-desktop-max)
+      margin: 0
+  .foooter-col-3
+    margin-left: rem(70px)
+    @include respond-to($large-desktop-max)
+     margin-left: rem(55px)
+  .contacts
+    margin-left: rem(40px)
+    @include respond-to($large-desktop-max)
+      margin: 0
+    p.phone
+      line-height: rem(16px)
+      font-size: rem(20px)
+      color: $white
+      @include font-weight(lato)
+      font-weight: bold
+      margin: rem(5px) 0 rem(20px) 0
+      @include respond-to($large-desktop-max)
+        font-size: rem(18px)
+      @include respond-to($tablet-portrait)
+        font-size: rem(20px)
+      a
+        color: $white
+    p.callback
+      line-height: rem(16px)
+      letter-spacing: let(30px)
+      font-size: rem(16px)
+      @include font-weight(bold)
+      &:before
+        content: '\f095'
+        font-family: "FontAwesome"
+        padding-right: rem(10px)
+        text-decoration: none
+        color: $icon-foot
+        font-size: rem(16px)
+        vertical-align: middle
+        @include respond-to($large-desktop-max)
+          padding-right: rem(5px)
+        @include respond-to($tablet-portrait)
+          padding-right: rem(10px)
+      @include respond-to($large-desktop-max)
+        font-size: rem(14px)
+      @include respond-to($tablet-portrait)
+        font-size: rem(16px)
+
+      a
+        color: $contact-foot
+    ul.adress, ul.time-work
+      margin: rem(20px) 0 0 rem(25px)
+      list-style: none
+      @include respond-to($tablet-portrait)
+        margin: rem(30px) 0 0 0
+      p
+        font-size: rem(16px)
+        letter-spacing: let(30px)
+        line-height: rem(16px)
+        @include font-weight(bold)
+        color: $contact-foot
+        margin-bottom: rem(5px)
+      li
+        color: $white
+        @include font-weight(lato)
+        letter-spacing: let(30px)
+        font-size: rem(16px)
+        line-height: rem(16px)
+    ul.time-work
+      margin-left: 0
+      p
+        margin-left: rem(25px)
+      li
+        padding-top: rem(5px)
+        font-size: rem(14px)
+        &:before
+          content: '\f017'
+          font-family: "FontAwesome"
+          padding-right: rem(10px)
+          text-decoration: none
+          color: $icon-foot
+          font-size: rem(18px)
+          vertical-align: middle
+      @include respond-to($tablet-portrait)
+        p
+          margin: 0 0 rem(5px) 0
+    address
+      margin-top: rem(20px)
+      font-size: rem(14px)
+      @include font-weight(lato)
+      font-weight: bold
+      font-style: normal
+      @include respond-to($large-desktop-max)
+        font-size: rem(12px)
+      @include respond-to($tablet-portrait)
+        font-size: rem(14px)
+      &:before
+        content: '\e902'
+        font-family: 'FootIcons'
+        padding-right: rem(10px)
+        text-decoration: none
+        color: $icon-foot
+        font-size: rem(18px)
+        vertical-align: middle
+        @include respond-to($large-desktop-max)
+          font-size: rem(16px)
+          padding-right: rem(5px)
+        @include respond-to($tablet-portrait)
+          font-size: rem(18px)
+          padding-right: rem(10px)
+
+
+      a
+        color: $contact-foot
+  .foooter-col-2, .foooter-col-3, .contacts
+    @include respond-to($tablet-portrait)
+       margin: rem(30px) 0 0 0
+       text-align: center
+
+
+
+  .copyright
+    p
+      text-align: center
+      letter-spacing: let(25px)
+      color: $white
+      opacity: 0.3
+      font-size: rem(13px)
+      padding-bottom: rem(20px)
+//Aside SideBar
+aside.sidebar
+  margin: rem(40px) 0 0 0
+  @include respond-to($large-desktop)
+    margin: rem(40px) rem(60px) 0 0
+  @include respond-to($tablet-portrait)
+    margin: rem(40px) 0 rem(40px) 0
+  p.Day
+    padding-top: rem(15px)
+    text-align: right
+    @include font-weight(bold)
+    font-size: rem(14px)
+    color: $data-c
+    @include respond-to($bootsrap-tablet-max)
+      font-size: rem(13px)
+  section.block
+    margin-top: rem(25px)
+    margin-bottom: rem(25px)
+    @include respond-to($bootsrap-tablet-max)
+      margin-top: rem(26px)
+      margin-bottom: rem(26px)
+    @include box-shadow(0px 5px 10px 0px rgba(0,0,0,0.15))
+    header
+      h3
+        padding: rem(10px) 0
+        text-align: center
+        @include font-weight(bold)
+        background-color: $color-header-aside-bar
+        font-size: rem(18px)
+        color: $white
+    p.about-block
+      font-size: rem(14px)
+      padding: rem(10px)
+      color: $block-about
+    footer
+      ul.links
+        list-style: none
+        li
+          font-size: rem(16px)
+          @include respond-to($bootsrap-tablet-max)
+            font-size: rem(14px)
+          @include respond-to($tablet-portrait)
+            font-size: rem(16px)
+
+          @include font-weight(bold)
+          border-bottom: 1px solid $border-bottom-aside
+          a
+            padding: rem(10px) 0 rem(10px) rem(10px)
+            display: block
+            margin: 0
+            width: 100%
+            height: 100%
+            &:hover,&:active
+              text-decoration: none
+              color: $white
+              background-color: #2f4785
+        li.about
+          padding: 0 0 rem(5px) rem(10px)
+hr.aside-hr
+  border-top: rem(1px) solid $hr-aside-c
+

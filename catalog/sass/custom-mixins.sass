@@ -1,0 +1,56 @@
+@import "../plugins/bower/bourbon/app/assets/stylesheets/bourbon"
+
+@import "vars"
+
+@function rem($px)
+  @return $px / 16px + 0rem
+@function let($photoshop)
+  @return $photoshop / 1000px + 0rem
+
+
+@mixin font-weight ($content)
+  @if $content==regular
+    font-family: "OpenSansRegular", sans-serif
+  @else if($content==bold)
+    font-family: "OpenSansBold", sans-serif
+  @else if($content==ubuntu)
+    font-family: "UbuntuBold", sans-serif
+  @else if($content==roboto)
+    font-family: "RobotoRegular", sans-serif
+  @else if($content==lato)
+    font-family: "LatoRegular", sans-serif
+
+
+@mixin box-shadow($content)
+  -webkit-box-shadow: $content
+  -moz-box-shadow: $content
+  box-shadow: $content
+
+@mixin linear-gradient-top($color1,$color2)
+  background-image: -webkit-gradient(linear, left top, left bottom, from($color1), to($color2)) /* Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(top, $color1, $color2)
+  background-image: -moz-linear-gradient(top, $color1, $color2)
+  background-image: -ms-linear-gradient(top, $color1, $color2)
+  background-image: -o-linear-gradient(top, $color1, $color2)
+  background-image: linear-gradient(to bottom, $color1, $color2)
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=$color1, endColorstr=$color2) /* IE6-9 */
+
+@mixin retina($image, $size)
+  @media (min--moz-device-pixel-ratio: 1.3),(-o-min-device-pixel-ratio: 2.6/2),(-webkit-min-device-pixel-ratio: 1.3),(min-device-pixel-ratio: 1.3),(min-resolution: 1.3dppx)
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image)
+    background-size: $size
+
+
+$phone: '(max-width: 480px)'
+$tablet-portrait: '(max-width: 767px)'
+$tablet-landscape: '(min-width: 768px) and (max-width: 979px)'
+$bootsrap-tablet-tmp: '(min-width: 991px)'
+$bootsrap-tablet-max: '(max-width: 992px)'
+$large-desktop: '(min-width: 1200px)'
+$large-desktop-max: '(max-width: 1200px)'
+@mixin respond-to($media)
+  @media only screen and #{$media}
+    @content
+
+
