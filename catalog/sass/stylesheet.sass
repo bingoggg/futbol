@@ -77,6 +77,20 @@ header.nav-top
   .search
     color: $black
     margin-left: rem(25px)
+    form 
+      i
+        position: absolute
+        pointer-events: none
+        color: $ico-search
+        font-size: rem(16px)
+        left: rem(10px)
+        top: rem(11px)
+      input[type="search"]
+        border: rem(1px) solid $border-search
+        border-radius: rem(5px)
+        padding: rem(8px) 0 rem(8px) rem(30px)
+        &:hover,&:active
+
   .cart
     color: $black
     margin-left: rem(25px)
@@ -85,8 +99,20 @@ header.nav-top
     p
       span
         font-size: rem(18px)
+      span.count
+        position: absolute
+        float: right
+        margin-left: rem(-5px)
+        margin-top: rem(-10px)
+        padding: rem(3.5px) rem(7px)
+        font-size: rem(10px)
+        @include font-weight(bold)
+        background-color: $link-hover-slider
+        color: $white
+        border-radius: 50%
   .ib
     display: inline-block
+    position: relative
     &.lhn
       line-height: normal
       &.mid
@@ -148,8 +174,9 @@ header.nav-top
     display: block
     text-align: center
     @include font-weight(bold)
-    &:hover
+    &:hover,&:active
       background-color: $bg-c1
+      text-decoration: none
     &:after
       content: '\f107'
       font-family: 'FontAwesome'
@@ -175,19 +202,29 @@ header.nav-top
               height: inherit
               background-size: cover
               background-position: 50%
+              position: relative
               .text-about
                 max-width: rem(335px)
-                margin-left: rem(105px)
-                padding-top: rem(105px)
+                margin-left: 15%
+                padding-top: 8%
                 height: 100%
                 @include respond-to($tablet-portrait)
-                  margin: 0
-                  padding-top: 50%
-                  max-width: 100%
+                 position: absolute
+                 padding: 20% 10%
+                 margin-left: 0
+                 text-align: center
+                 left: 0
+                 max-width: 100%
+                 @include respond-to($phone)
+                  padding-top: 35%
                 p
                   font-size: rem(36px)
                   color: $white
                   margin-bottom: rem(45px)
+                  @include respond-to($tablet-portrait)
+                    font-size: rem(30px)
+                  @include respond-to($phone)
+                    font-size: rem(24px)
                 a.button-sl
                   font-size: rem(18px)
                   @include font-weight(roboto)
@@ -198,6 +235,12 @@ header.nav-top
                   border-radius: rem(5px)
                   background-color: #2f4785
                   @include linear-gradient-top(#2F4785,#3A59A6)
+                  @include respond-to($tablet-portrait)
+                    font-size: rem(16px)
+                    margin: rem(25px) 0 0 0
+                    padding: rem(15px) rem(30px)
+                  @include respond-to($phone)
+                    font-size: rem(14px)
                   &:hover,&:active
                     @include linear-gradient-top(#25396B,#334e91)
                     text-decoration: none
@@ -210,7 +253,7 @@ header.nav-top
         height: 0
         box-sizing: border-box
         padding: 0 rem(30px)
-        @include respond-to($phone)
+        @include respond-to($tablet-portrait)
           display: none
         .owl-prev
           float: left
@@ -264,7 +307,7 @@ header.nav-top
       margin: 0 0 rem(20px) 0
     //Tabs
     ul.tab
-      overflow: auto
+      overflow: hidden
       width: 100%
       list-style: none
       margin: 0
@@ -332,6 +375,18 @@ header.nav-top
           margin: 0 0 rem(20px) 0
           li 
             margin: rem(20px) 0 0 0
+          &.req
+            li
+              margin: rem(10px) 0 0 0
+              &:first-child
+                font-size: rem(24px)
+                @include font-weight(robotobold)
+          &.adress            
+            li
+              margin: rem(5px) 0 0 0
+              &:first-child
+                font-size: rem(16px)
+                @include font-weight(robotobold)
         &.requisites
           margin-bottom: rem(50px)
           li
@@ -353,6 +408,82 @@ header.nav-top
         color: $tab-red
       b.red 
         color: $bold-red
+    //#Certificates page
+    section.certificates
+      ul 
+        margin: rem(20px) 0 rem(35px) 0
+        li
+          display: inline-block
+          width: 30%
+          margin-bottom: rem(15px)
+          @include respond-to($tablet-portrait)
+            width: 48%     
+          @include respond-to($phone)
+            width: 100%            
+            margin-left: 0     
+          &:not(:nth-child(3n+1))
+            margin-left: 4%
+            @include respond-to($tablet-portrait)
+              margin-left: 0
+          &:not(:nth-child(2n+1))
+            @include respond-to($tablet-portrait)
+              margin-left: 2%
+          img 
+            width: 100%
+    //#Contact-page
+    section.contacts-page
+      .feedback
+        h3
+          font-size: rem(30px)
+        form
+          padding: rem(20px)
+          margin: 0 0 rem(24px) 0
+          border: rem(1px) solid $hr
+          text-align: center
+          input 
+            padding: rem(15px) rem(25px)
+            width: 48%
+            @include respond-to($phone)
+              width: 100%
+              float: none
+              margin-bottom: rem(20px)
+          input[type="text"]
+            display: inline-block
+            float: left
+          input[type="email"]
+            display: inline-block
+            float: right
+          textarea
+            display: inline-block
+            margin: rem(30px) 0 rem(20px) 0
+            padding: rem(20px)
+            width: 100%
+            @include respond-to($phone)
+              margin: 0 0 rem(20px) 0
+          input[type="submit"]
+            display: inline-block
+            border-radius: rem(100px)
+            border: none
+            width: auto        
+            padding: rem(5px) rem(40px)
+            line-height: rem(55px)
+            background-color: $ico-red
+            color: $white
+            @include box-shadow(0 rem(6px) rem(6px) 0 rgba(0,0,0,0.17))            
+            @include font-weight(robotobold)
+            font-size: rem(30px)
+            margin-bottom: rem(30px)
+            transition: all 0.25s ease-out
+            &:hover,&:active 
+              @include box-shadow(0 rem(8px) rem(15px) rem(0px) rgba(0,0,0,0.25))    
+              transition: all 0.25s ease-in
+              background-color: lighten($ico-red, 5%)
+          p
+            text-align: center
+            margin: 0 0 rem(30px) 0
+            a
+              display: block         
+
     //#About
     section.about
       figure
@@ -393,6 +524,8 @@ header.nav-top
         margin-top: rem(60px)
     //#Contacts
     section.contacts-page
+      p
+        font-size: rem(18px)
       ul 
         list-style: none
         &.city
@@ -443,6 +576,7 @@ header.nav-top
               font-size: rem(24px)
               vertical-align: middle
           &.maps
+            margin: rem(30px) rem(31px) rem(30px) 0
         &.r-bold
           margin: 0
           &.all 
@@ -595,6 +729,9 @@ header.nav-top
           section.post-about
             p
               font-size: rem(14px)
+              @include font-weight(regular)
+              line-height: normal
+              padding: 0
           footer
             p
               padding-top: rem(15px)
@@ -629,7 +766,7 @@ header.nav-top
               padding: rem(10px) rem(10px)
           section
             p
-              padding: 0 rem(10px)
+              padding: 0 rem(10px) !important
               color: #000
           footer
             p
@@ -665,8 +802,10 @@ header.nav-top
           section
             margin-bottom: rem(5px)
             p
+              @include font-weight(regular)
               font-size: rem(14px)
               line-height: rem(18px)
+              padding: 0
           footer
             p
             color: $gray
@@ -853,6 +992,7 @@ footer.foooter
       @include respond-to($tablet-portrait)
         p
           margin: 0 0 rem(5px) 0
+    ul.contact-information 
     address
       margin-top: rem(20px)
       font-size: rem(14px)
