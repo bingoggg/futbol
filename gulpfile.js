@@ -11,7 +11,7 @@ var gulp           = require('gulp'),
 // Обновление страниц сайта на локальном сервере
 gulp.task('browser-sync', function() {
 	browserSync({
-		proxy: "Futbol.com",
+		proxy: "Futbol.com/requsites.html",
 		notify: false
 	});
 });

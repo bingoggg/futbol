@@ -194,22 +194,22 @@ header.nav-top
                   color: $white
                   margin: rem(30px) 0 0 0
                   padding: rem(20px) rem(35px)
-                  @include box-shadow(2px 6px 6px -2px rgba(0,0,0,0.22))
+                  @include box-shadow(rem(2px) rem(6px) rem(6px) rem(-2px) rgba(0,0,0,0.22))
                   border-radius: rem(5px)
                   background-color: #2f4785
                   @include linear-gradient-top(#2F4785,#3A59A6)
                   &:hover,&:active
                     @include linear-gradient-top(#25396B,#334e91)
                     text-decoration: none
-                    @include box-shadow(2px 6px 6px -2px rgba(0,0,0,0.32))
+                    @include box-shadow(rem(2px) rem(6px) rem(6px) rem(-2px) rgba(0,0,0,0.32))
       .owl-nav
         position: absolute
         z-index: 10
         width: 100%
         top: 42%
-        height: 0px
+        height: 0
         box-sizing: border-box
-        padding: 0px 30px
+        padding: 0 rem(30px)
         @include respond-to($phone)
           display: none
         .owl-prev
@@ -254,25 +254,274 @@ header.nav-top
 
   //Main Tag
   main
-    margin: rem(40px) 0 0 0
+    margin: rem(40px) 0 rem(40px) 0
     @include respond-to($large-desktop)
-      margin: rem(40px) 0 0 rem(50px)
+      margin: rem(40px) 0 rem(40px) rem(50px)
     h1
       text-transform: uppercase
       font-size rem(24px)
       @include font-weight(bold)
       margin: 0 0 rem(20px) 0
+    //Tabs
+    ul.tab
+      overflow: auto
+      width: 100%
+      list-style: none
+      margin: 0
+      padding: 0
+      margin-bottom: rem(10px)
+      li
+        padding: rem(10px) rem(25px) rem(5px)
+        float: left
+        font-size: rem(16px)
+        font-family: Verdana, OpenSansBold ,sans-serif; 
+        font-weight: bold
+        color: $white
+        border-radius: rem(15px) rem(15px) 0 0
+      &.red
+        border-bottom: rem(3px) solid $tab-red
+        li 
+          background-color: $tab-red
+      &.blue 
+        border-bottom: rem(3px) solid $tab-blue
+        li 
+          background-color: $tab-blue
+      &.green
+        border-bottom: rem(3px) solid $tab-green
+        li 
+          background-color: $tab-green
+      &.darkblue
+        border-bottom: rem(3px) solid $tab-darkblue
+        li 
+          background-color: $tab-darkblue
+      &.lightred
+        border-bottom: rem(3px) solid $tab-lightred
+        li 
+          background-color: $tab-lightred
+    //#Cooperation 
+    section.cooperation
+      h3
+        @include font-weight(robotobold)
+        font-size: rem(18px)
+        margin: rem(10px) 0 rem(10px) 0
+        &:first-child
+          margin: 0 0 rem(10px) 0
+      p
+        @include font-weight(roboto)
+        font-size: rem(18px)
+        padding: 0 0 rem(20px) 0
+        line-height: rem(21px)
+    //Section
+    section
+      h3 
+        @include font-weight(robotobold)
+        font-size: rem(18px)
+        margin: rem(10px) 0 rem(10px) 0
+      ul.list
+        list-style: none
+        line-height: rem(21px)
+        li
+          font-size: rem(18px)
+          @include font-weight(roboto)
+        &.one 
+          li 
+            margin: rem(55px) 0 0 0
+            &:last-child
+              margin: rem(55px) 0 rem(55px) 0
+        &.rules
+          margin: 0 0 rem(20px) 0
+          li 
+            margin: rem(20px) 0 0 0
+        &.requisites
+          margin-bottom: rem(50px)
+          li
+            margin: rem(15px) 0 0 0 
+        &.date
+          margin-bottom: rem(50px)
+          li
+            display: inline-block
+            &:last-child
+              margin-left: 20%
+      p
+        @include font-weight(roboto)
+        font-size: rem(18px)
+        line-height: rem(24px)
+        padding: 0 0 rem(20px) 0
+        a 
+          color: #6aabe2
+      p.warning
+        color: $tab-red
+      b.red 
+        color: $bold-red
+    //#About
+    section.about
+      figure
+        margin: rem(35px) 0 rem(35px) 0 
+        &:first-child 
+          margin: 0 0 rem(35px) 0 
+      p
+        color: $color-about-page-text
+        line-height: rem(24px)
+    //#Privacy-policy
+    section.privacy-policy
+      p
+        @include font-weight(roboto)
+        font-size: rem(18px)
+    //#Public-offer
+    section.public-offer
+      h3 
+        @include font-weight(robotobold)
+        font-size: rem(18px)
+        margin: rem(10px) 0 rem(10px) 0
+        &:first-child
+          margin: 0 0 rem(10px) 0
+      p
+        @include font-weight(roboto)
+        font-size: rem(18px)
+        padding: 0           
+      a.accept
+        font-size: rem(18px)
+        @include font-weight(robotobold)
+        text-decoration: underline
+        color: $black
+        text-transform: uppercase
+    //#Requsites
+    section.requsites
+      h3 
+        font-size: rem(24px)
+      h3.mt
+        margin-top: rem(60px)
+    //#Contacts
+    section.contacts-page
+      ul 
+        list-style: none
+        &.city
+          margin-bottom: rem(10px)
+          li    
+            &:first-child
+              font-size: rem(24px)
+              @include font-weight(robotobold)
+              padding-bottom: rem(10px)S
+        li
+          margin-left: rem(31px)
+          font-size: rem(18px)
+          @include font-weight(roboto)
+          &:first-child
+          &.city-ico
+            margin: 0
+            &:before
+              content: "\f041"
+              font-family: 'FontAwesome'
+              padding-right: rem(15px)
+              color: $ico-red
+              vertical-align: baseline
+          &.time-ico
+            margin: 0
+            &:before
+              content: "\f017"
+              font-family: 'FontAwesome'
+              padding-right: rem(10px)
+              color: $ico-red
+              vertical-align: baseline
+              font-size: rem(24px)
+          &.phone-ico
+            margin: 0
+            &:before
+              content: "\f095"
+              font-family: 'FontAwesome'
+              padding-right: rem(10px)
+              color: $ico-red
+              font-size: rem(24px)
+              vertical-align: middle
+          &.mail-ico
+            margin: 0
+            &:before
+              content: "\e902"
+              font-family: 'FootIcons'
+              padding-right: rem(8px)
+              color: $ico-red
+              font-size: rem(24px)
+              vertical-align: middle
+          &.maps
+        &.r-bold
+          margin: 0
+          &.all 
+            margin-top: rem(20px)
+            li 
+              @include font-weight(robotobold)
+          li
+            &:first-child
+              @include font-weight(robotobold)
+       
+    //#Gift-ideas
+    section.gift-ideas
+    //#Shipping-and-payment
+    section.shipping-and-payment
+    //#How to order
+    section.how-to-order
+    //#Exchange-failure and how-order
+    section.exchange-failure, section.how-to-order, section.shipping-and-payment, section.gift-ideas
+      h3 
+        font-size: rem(24px)
+        margin: rem(20px) 0 rem(15px) 0
+      p
+        a
+          color: $black
     .news
       //Mini-news
       &.mini-news
         .block
-        .big-img
-          width: 100%
-          @include respond-to($large-desktop)
-            max-width: rem(448px)
-            float: left
-            img
-              height: rem(300px)
+          &.big-img
+            width: 100%
+            @include respond-to($large-desktop)
+              max-width: rem(448px)
+              float: left
+              img
+                height: rem(300px)
+            &.big-img-solo
+              max-width: 100%
+              display: inline-block
+              position: relative
+              a 
+                &:hover,&:active 
+                  span.about-big-article
+                    background-color: rgba(0,0,0,.75)
+              span.about-big-article
+                display: block
+                position: absolute
+                width: 100%
+                left: 0
+                bottom: 0
+                box-sizing: border-box
+                background-color: rgba(0,0,0,.49)
+                color: $white
+                height: rem(40px)
+                line-height: rem(40px)
+                time 
+                  font-size: rem(12px)
+                  display: inline-block
+                  line-height: normal
+                  vertical-align: middle
+                  margin-left: rem(10px)
+                  font-weight: 
+                  &:before
+                    content: "\e901"
+                    font-family: 'FootIcons'
+                    padding-right: rem(6px)
+                    color: $gray
+                    vertical-align: baseline
+                h2
+                  margin-left: rem(15px)
+                  display: inline-block
+                  font-size: rem(14px)
+                  @include font-weight(bold)
+
+
+
+
+
+
+
         .news-right
           article
             width: 100%
@@ -313,11 +562,12 @@ header.nav-top
         margin-top: rem(10px)
         width: 100%
         article
-          margin-left: rem(7px)
           display: inline-block
-          @include respond-to($bootsrap-tablet-tmp)
           max-width: rem(199px)
-          margin-left: rem(5px)
+          margin-left: rem(6px)
+          @include respond-to($large-desktop)
+            max-width: rem(199px)
+            margin-left: rem(8.8px)
           @include respond-to($bootsrap-tablet-max)
             max-width: 100%
             margin: rem(15px) 0
@@ -571,34 +821,35 @@ footer.foooter
       list-style: none
       @include respond-to($tablet-portrait)
         margin: rem(30px) 0 0 0
-      p
-        font-size: rem(16px)
-        letter-spacing: let(30px)
-        line-height: rem(16px)
-        @include font-weight(bold)
-        color: $contact-foot
-        margin-bottom: rem(5px)
       li
         color: $white
         @include font-weight(lato)
         letter-spacing: let(30px)
         font-size: rem(16px)
         line-height: rem(16px)
+        &:first-child
+          font-size: rem(16px)
+          letter-spacing: let(30px)
+          line-height: rem(16px)
+          @include font-weight(bold)
+          color: $contact-foot
+          margin-bottom: rem(5px)
     ul.time-work
       margin-left: 0
-      p
-        margin-left: rem(25px)
       li
         padding-top: rem(5px)
         font-size: rem(14px)
-        &:before
-          content: '\f017'
-          font-family: "FontAwesome"
-          padding-right: rem(10px)
-          text-decoration: none
-          color: $icon-foot
-          font-size: rem(18px)
-          vertical-align: middle
+        &:first-child
+          margin-left: rem(25px)
+        &:last-child      
+          &:before
+            content: '\f017'
+            font-family: "FontAwesome"
+            padding-right: rem(10px)
+            text-decoration: none
+            color: $icon-foot
+            font-size: rem(18px)
+            vertical-align: middle
       @include respond-to($tablet-portrait)
         p
           margin: 0 0 rem(5px) 0
@@ -634,9 +885,6 @@ footer.foooter
     @include respond-to($tablet-portrait)
        margin: rem(30px) 0 0 0
        text-align: center
-
-
-
   .copyright
     p
       text-align: center
@@ -701,8 +949,8 @@ aside.sidebar
               text-decoration: none
               color: $white
               background-color: #2f4785
-        li.about
-          padding: 0 0 rem(5px) rem(10px)
+          &:first-child
+            padding: 0 0 rem(5px) rem(10px)
 hr.aside-hr
   border-top: rem(1px) solid $hr-aside-c
 
