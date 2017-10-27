@@ -166,6 +166,32 @@ header.nav-top
           span
             display: block
             font-size: rem(36px)
+      &.active
+        height: 100%
+        &:after
+          display: none
+        &:before
+          display: none
+        li
+          vertical-align: middle
+          text-align: left
+          position: relative
+          width: 100%
+          a
+            display: block
+            position: relative
+            padding: rem(10px) rem(10px)
+            font-size: rem(14px)
+            text-align: left
+            span
+              vertical-align: middle
+              position: absolute
+              right: rem(10px)
+              top: rem(8px)
+              font-size: rem(24px)
+          &.end-list
+            display: none
+
   a.spoiler-menu
     font-size: rem(14px)
     color: $white
@@ -174,7 +200,9 @@ header.nav-top
     display: block
     text-align: center
     @include font-weight(bold)
-    &:hover,&:active
+    &:active,&:focus
+      background-color: $bg-c2
+    &:hover
       background-color: $bg-c1
       text-decoration: none
     &:after
@@ -183,7 +211,11 @@ header.nav-top
       padding-left: rem(10px)
   //Content class
   .Content
-    background-image: url("/catalog/img/9.jpg")
+    background: url(/catalog/img/bg2.png) top center no-repeat, url(/catalog/img/9.jpg) bottom left repeat;
+    @include respond-to($large-desktop-max)
+    	background: url(/catalog/img/bg-left.png) top left no-repeat, url(/catalog/img/bg-right.png) top right no-repeat, url(/catalog/img/9.jpg) bottom left repeat;
+    @include respond-to($tablet-portrait)
+    	background: url(/catalog/img/9.jpg) bottom left repeat
     padding-bottom: 30px
     .bg
       background-color: $white
@@ -430,6 +462,297 @@ header.nav-top
               margin-left: 2%
           img 
             width: 100%
+    //Form standart
+    form 
+      label
+        &.required
+          &:after 
+            content: '*'
+            margin-left: rem(4px)
+            color: $required
+    //#Article
+    section.article         
+      h3  
+        font-family: Verdana, Geneva, sans-serif;
+        font-weight: bold
+        font-size: rem(24px)
+        margin-top: rem(30px)
+      p
+        font-family: Verdana, Geneva, sans-serif;
+        line-height: rem(25px)
+        font-size: rem(16px)
+        i 
+          color: $tab-red
+          font-style: italic
+      .news
+        margin-bottom: rem(30px)
+      .Short-content
+        max-width: rem(470px)   
+        padding: rem(20px)
+        background-color: $short-content
+        margin-bottom: rem(30px)
+        h3
+          font-size: rem(24px)
+          line-height: rem(20px)
+          font-weight: bold
+          font-family: Verdana, Geneva, sans-serif
+          margin-bottom: rem(25px)
+      ul.list
+        &.article
+          margin: 0 0 rem(20px) 0
+          @include respond-to($tablet-portrait)
+            margin: 0 0 rem(20px) rem(20px)
+          line-height: rem(20px)
+          &.short-list
+            margin: 0 0 rem(20px) rem(20px)
+          &.decimal 
+            list-style: decimal
+          &.italic
+            font-style: italic
+          li
+            font-weight: bold
+            font-size: rem(16px)
+            margin-bottom: rem(10px)
+            a
+              font-weight: normal !important
+              color: $black
+              text-decoration-color: $short-content-link
+          &.art-list-2
+            @include respond-to($bootsrap-tablet-max)
+              margin: 0 0 rem(20px) rem(20px)
+          &.art-list-2, &.soccer
+            li
+              color: $tab-red
+              font-size: rem(18px)
+              line-height: rem(30px)
+              font-style: normal
+              margin-bottom: rem(3px)
+              span
+                color: $brown
+                padding-left: rem(5px)
+                font-weight: bold
+          &.ball
+            li
+              &:before
+                content: "\f1e3"; 
+                font-family: FontAwesome;
+                display: inline-block;
+                color: $black
+                font-size: rem(18px)
+          &.soccer
+            margin-left: 0
+            li 
+              span
+                padding-left: rem(10px)
+      .End-article
+        .message
+          padding: rem(15px)
+          background-color: $art-message
+          margin-bottom: rem(10px)
+          border-top-left-radius: rem(20px)
+          border-top-right-radius: rem(20px)                  
+          p
+            line-height: rem(20px)  
+            font-size: rem(14px)
+            font-style: italic
+            font-family: Verdana, Geneva, sans-serif
+            line-height: rem(20px)      
+            padding-bottom: 0
+            span
+              font-weight: bold
+              font-size: rem(16px)
+              padding-right: rem(5px)
+          &.important
+            p
+              span
+                color: $art-message-important
+          &.intresting
+            p
+              span
+                color: $art-message-intresting      
+          &.advice
+            p
+              span
+                color: $art-message-advice   
+        hr
+          border-top: 1px solid $hr-end-article      
+          margin-top: rem(35px)
+        .review
+          border: rem(2px) solid $art-message-intresting
+          border-radius: rem(15px)
+          padding: rem(20px) 
+          margin: rem(35px) 0 rem(35px) 0
+          position: relative
+          .left
+            display: inline-block
+          .right
+            display: inline-block
+            float: right
+            @include respond-to($bootsrap-tablet-max)
+              float: none
+              display: block
+          ul 
+            list-style: none
+            font-size: rem(14px)
+            line-height: rem(20px)
+            li
+              display: inline-block
+            &.top
+              li
+                @include respond-to($phone)
+                  font-size: rem(18px)
+                a 
+                  i 
+                    &.fa-star
+                      color: $star
+                    &.fa-star-half-o
+                      color: $star
+                    &.fa-star
+                      &.empty
+                        color: $star-o
+                    &.fa-star, &.fa-star-half-o, &.fa-star
+                      &:hover,&:active
+                        color: $star-hover
+                &:first-child
+                  font-size: rem(16px)
+                  font-weight: bold
+                  text-transform: uppercase
+                  padding-right: rem(10px)
+                  @include respond-to($phone)
+                    display: block
+                    margin-bottom: rem(10px)
+               
+            &.bottom-left, &.bottom-right
+              display: inline-block
+            &.bottom-left
+              margin-top: rem(10px)
+              li 
+                &:not(:first-child)
+                  margin-left: rem(10px)
+            &.bottom-right
+              float: right
+              @include respond-to($bootsrap-tablet-max)
+                margin-top: rem(15px)
+              li 
+                &:first-child
+                  display: block
+                  text-align: right
+                  line-height: rem(20px)
+                  font-size: rem(14px)
+                  font-weight: bold
+                  font-family: Verdana, Geneva, sans-serif
+                  margin-bottom: rem(5px)
+                  &:before
+                    content: "\f1e0"
+                    font-family: 'FontAwesome'
+                    padding-right: rem(10px)
+                    color: $rev-share
+                    vertical-align: baseline
+                    font-size: rem(16px)
+                a 
+                  i
+                    color: $white
+                    background-color: gray
+                    padding: 5px 10px
+                    border-radius: 50%
+                    font-size: rem(14px)
+                    &.fa-odnoklassniki
+                      padding: rem(7px) rem(10px)
+                      background-color: $odnoklassniki-share
+                    &.fa-vk
+                      padding: rem(7px) rem(7px)
+                      background-color: $vk-share
+                    &.fa-facebook
+                      padding: rem(7px) rem(10px)
+                      background-color: $facebook-share
+                    &.fa-twitter
+                      padding: rem(7px) rem(8px)
+                      background-color: $twitter-share
+                  &:hover,&:active
+                    i
+                      @include box-shadow(0px 2px 15px 0px rgba(0,0,0,0.17))
+                      &.fa-odnoklassniki
+                        background-color: lighten($odnoklassniki-share, 5%)
+                      &.fa-vk
+                        background-color: lighten($vk-share, 5%)
+                      &.fa-facebook
+                        background-color: lighten($facebook-share, 5%)
+                      &.fa-twitter
+                        background-color: lighten($twitter-share, 5%)
+
+    //#Transfer
+    section.transfer
+    //#Air-tickets page
+    section.air-tickets, section.transfer
+      form
+        max-width: rem(500px)
+        label
+          font-size: rem(14px)
+          @include font-weight(bold)
+          color: $label
+          line-height: rem(24px)
+          &.active
+            color: $input
+        .input  
+          margin-bottom: rem(15px)
+          position: relative
+          &.ico
+            input           
+              padding: rem(10px) rem(10px) rem(10px) rem(30px)
+          &.sub
+            max-width: rem(470px)
+        input,select
+          position: relative
+          font-size: rem(16px)
+          @include font-weight(bold)
+          border: rem(1px) solid $label
+          max-width: rem(470px)
+          width: 100%
+          color: $input
+          padding: rem(10px)
+          transition: all .25s ease-in
+          &+i
+            position: absolute
+            left: rem(10px)
+            top: rem(16px)
+            color: $label
+          &+i.fa-mobile
+            font-size: rem(16px)
+          & ~ i.fa-minus-circle 
+            visibility: hidden
+            transition: all .25s ease-out
+            color: $tab-green
+          &:focus
+            &+i 
+              color: $required
+          &:invalid
+            outline: none
+            transition: all .25s ease-out
+            border: rem(1px) solid $required
+            & ~ i.fa-minus-circle 
+              visibility: visible
+              padding-left: rem(10px)
+              color: $required
+              transition: all .25s ease-in
+        input[type="submit"]
+          padding: rem(15px) 0
+          max-width: rem(312px)
+          display: block
+          margin: auto
+          border-radius: rem(5px)
+          color: $white
+          text-transform: uppercase
+          background-color: $link-hover-slider
+          margin-top: rem(35px)
+          transition: all .25s ease-out
+          &:hover,&:active,&:focus
+             transition: all .25s ease-in
+             background-color: lighten($link-hover-slider, 5%)
+
+        select
+          option
+            @include font-weight(regular)
+            
     //#Contact-page
     section.contacts-page
       .feedback
@@ -631,24 +954,38 @@ header.nav-top
                 color: $white
                 height: rem(40px)
                 line-height: rem(40px)
+                @include respond-to($tablet-portrait)
+                  height: rem(80px)
+                  line-height: rem(16px)                  
                 time 
                   font-size: rem(12px)
                   display: inline-block
                   line-height: normal
                   vertical-align: middle
-                  margin-left: rem(10px)
-                  font-weight: 
+                  margin-left: rem(10px)              
                   &:before
                     content: "\e901"
                     font-family: 'FootIcons'
                     padding-right: rem(6px)
                     color: $gray
                     vertical-align: baseline
+                  @include respond-to($tablet-portrait)
+                    position: absolute
+                    right: rem(10px)
+                    bottom: rem(10px)
                 h2
                   margin-left: rem(15px)
                   display: inline-block
                   font-size: rem(14px)
                   @include font-weight(bold)
+                  @include respond-to($tablet-portrait)
+                    position: absolute
+                    top: 25%
+                    font-size: rem(16px)
+                  @include respond-to($phone)
+                    position: absolute
+                    top: rem(15px)
+                    font-size: rem(14px)
 
 
 
@@ -1070,27 +1407,91 @@ aside.sidebar
     footer
       ul.links
         list-style: none
-        li
-          font-size: rem(16px)
-          @include respond-to($bootsrap-tablet-max)
-            font-size: rem(14px)
-          @include respond-to($tablet-portrait)
-            font-size: rem(16px)
-
-          @include font-weight(bold)
-          border-bottom: 1px solid $border-bottom-aside
-          a
+        ul
+        	&.submenu
+      			list-style: none
+      			overflow: hidden
+      			max-height: 0 
+      			transition: max-height 0.2s ease-out;
+      			li
+      				@include font-weight(regular)
+      				font-size: rem(16px)
+      				&:first-child
+      					padding: 0
+      				a
+      					padding: rem(10px) 0 rem(10px) rem(30px) 
+      					&:active, &:hover, &:focus, &.active
+      						padding: rem(10px) 0 rem(10px) rem(35px) 
+				li
+					font-size: rem(16px)
+					border-bottom: 1px solid $border-bottom-aside
+					@include respond-to($bootsrap-tablet-max)
+					  font-size: rem(14px)
+					@include respond-to($tablet-portrait)
+					  font-size: rem(16px)
+					@include font-weight(bold)
+					&.accordion
+						cursor: pointer
+						transition: all .25s ease-out
+						padding: rem(10px) 0 rem(10px) rem(10px)
+						display: block
+						margin: 0
+						width: 100%
+						height: 100%
+						&:active, &:hover, &:focus, &.active	
+							padding: rem(10px) 0 rem(10px) rem(15px)
+							background-color: $link-sidebar-standart-bg
+							color: $white
+						&:after
+							content: "\f107"
+							font-family: "FontAwesome"
+							float: right
+							font-size: rem(16px)
+							font-weight: bold
+							margin: 0 rem(10px)
+						&.active
+							&:after
+								content: "\f106"
+						&.green
+							&:active, &:hover, &:focus, &.active
+								color: $black
+								background-color: darken($link-sidebar-green-bg, 5%)
+							&+ul
+								&.submenu
+									li
+										a
+											background-color: $link-sidebar-green-bg
+											&:active, &:hover, &:focus, &.active
+												color: $black
+												background-color: darken($link-sidebar-green-bg, 5%)
+						&.yellow
+							&:active, &:hover, &:focus, &.active
+								color: $black
+								background-color: darken($link-sidebar-yellow-bg, 5%)
+							&+ul
+								&.submenu
+									li
+										a
+											background-color: $link-sidebar-yellow-bg
+											&:active, &:hover, &:focus, &.active
+												color: $black
+												background-color: darken($link-sidebar-yellow-bg, 5%)												
+					&:first-child
+						padding: 0 0 rem(5px) rem(10px)
+					a
             padding: rem(10px) 0 rem(10px) rem(10px)
             display: block
             margin: 0
             width: 100%
             height: 100%
-            &:hover,&:active
-              text-decoration: none
-              color: $white
-              background-color: #2f4785
-          &:first-child
-            padding: 0 0 rem(5px) rem(10px)
+            color: $black
+            transition: all .25s ease-out
+            &:hover,&:active,&:focus
+            	color: $white
+            	background-color: $link-sidebar-standart-bg
+            	text-decoration: none
+            	padding: rem(10px) 0 rem(10px) rem(15px)
+              transition: all .25s ease-in
 hr.aside-hr
   border-top: rem(1px) solid $hr-aside-c
 
