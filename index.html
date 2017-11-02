@@ -14,20 +14,31 @@
     <link rel="stylesheet" href="catalog/plugins/bower/owl.carousel/dist/assets/owl.theme.default.min.css">
     <script src="catalog/plugins/bower/jquery/dist/jquery.min.js"></script>
     <script src="catalog/plugins/bower/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="catalog/plugins/bower/slideout-master/dist/slideout.min.js"></script>
     <script src="catalog/js/main.js"></script>
+
 </head>
 <body>
     <!-- Wrapper -->
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
+                <!--Mobile Menu-->
+                <nav id="menu" class="visible-xs visible-sm">
+                  <header>
+                    <h2>Menu</h2>
+                  </header>
+                  <list>
+                      
+                  </list>
+                </nav>
                 <!-- Main -->
-                <div class="Main">
-                    <header class="nav-top">
+                <div class="Main" id="panel">
+                    <header class="nav-top hidden-sm hidden-xs">
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <div class="row">
+                                    <div class="row">                                       
                                         <div class="nav">
                                             <div class="logo ib lhn mid">
                                                 <a href="#">Logo</a>
@@ -55,7 +66,7 @@
                             </div>
                         </div>
                     </header>
-                    <nav>
+                    <nav class="hidden-sm hidden-xs">
                         <div class="container hid">
                             <div class="row">
                                 <div class="col-sm-12">

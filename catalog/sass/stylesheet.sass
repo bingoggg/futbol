@@ -42,16 +42,21 @@ header.nav-top
   color: $white
   .nav
     line-height: rem(86px)
+      //Nav form Registration
   .logo
     a
-      padding: 15px 50px
+      padding: rem(15px) rem(50px)
       font-size: rem(24px)
       border: rem(1px) solid $default-color
       border-radius: rem(5px)
   .world-cup
     margin-left: rem(36px)
+    @include respond-to($large-desktop-max)
+      display: none !important
   .phone
     margin-left: rem(32px)
+    @include respond-to($large-desktop-max)
+    	display: none !important
     p.mob
       font-size: rem(18px)
       @include font-weight(bold)
@@ -63,6 +68,8 @@ header.nav-top
         font-size: rem(16px)
   .callback
     margin-left: rem(30px)
+    @include respond-to($large-desktop-max)
+    	margin-left: rem(36px)
     a
       font-size: rem(14px)
       padding: rem(10px) rem(15px)
@@ -77,6 +84,8 @@ header.nav-top
   .search
     color: $black
     margin-left: rem(25px)
+    @include respond-to($large-desktop-max)
+    	margin-left: rem(36px)
     form 
       i
         position: absolute
@@ -94,6 +103,8 @@ header.nav-top
   .cart
     color: $black
     margin-left: rem(25px)
+    @include respond-to($large-desktop-max)
+    	margin-left: rem(36px)
     font-weight: bold
     font-size: rem(16px)
     p
@@ -117,6 +128,8 @@ header.nav-top
       line-height: normal
       &.mid
         vertical-align: middle
+
+
 //Main class
 .Main
   //Nav
@@ -191,7 +204,6 @@ header.nav-top
               font-size: rem(24px)
           &.end-list
             display: none
-
   a.spoiler-menu
     font-size: rem(14px)
     color: $white
@@ -219,6 +231,7 @@ header.nav-top
     padding-bottom: 30px
     .bg
       background-color: $white
+      position: relative
   //Slider
   section.slider
     height: rem(438px)
@@ -1493,5 +1506,186 @@ aside.sidebar
             	padding: rem(10px) 0 rem(10px) rem(15px)
               transition: all .25s ease-in
 hr.aside-hr
-  border-top: rem(1px) solid $hr-aside-c
+	border-top: rem(1px) solid $hr-aside-c
 
+ //Forms 
+.form-in
+	max-width: rem(340px)
+	width: 100%
+	background-color: $bg-forms  	
+	position: absolute
+	z-index: 99
+	right: 0
+	border-radius: rem(5px)
+	border: rem(1px) solid $bg-border-form
+	@include box-shadow(0 rem(2px) rem(5px) rem(1px) rgba(0,0,0,.1))
+	.header-t
+		line-height: rem(65px)
+		height: rem(65px)
+		background-color: $bg-forms-top-bgc
+		font-size: rem(16px)
+		color: $white
+		border-radius: rem(5px)
+		border-bottom-left-radius: 0
+		border-bottom-right-radius: 0  		
+		@include font-weight(bold)
+		text-transform: uppercase
+		text-align: center
+		position: relative
+		margin-bottom: rem(10px)
+		&:after
+			content: ''
+			position: absolute
+			left: 50%
+			margin-left: rem(-22px)
+			top: 100%
+			width: 0
+			height: 0
+			border-left: rem(22px) solid transparent
+			border-right: rem(22px) solid transparent
+			border-top: rem(10px) solid $bg-forms-top-bgc
+			clear: both
+	input, label
+		max-width: rem(290px)
+		width: 100%
+		display: block
+		margin: 0 auto
+	label
+		font-size: rem(14px)
+		color: $bg-form-label-in-color
+		margin-bottom: rem(9px)
+	input
+		font-size: rem(14px)
+		margin-bottom: rem(15px)
+		height: rem(35px)
+		line-height: rem(35px)
+		border: rem(1px) solid $bg-form-border-sdrt-input
+		border-radius: rem(3px)
+		padding: 0 0 0 rem(10px)
+		color: $gray  	
+		@include font-weight(bold)
+		@include box-shadow-two( 0 0  rem(5px) rem(2px) rgba(210,217,220,0.5), inset rem(1px) rem(1px) rem(6px) rem(1px) rgba(0,0,0,0.1))
+		transition: all .25s ease-out
+		&:hover,&:active,&:focus
+			outline: none
+			@include box-shadow-two( 0 0  rem(5px) rem(4px) rgba(210,217,220,0.75), inset rem(1px) rem(1px) rem(6px) rem(1px) rgba(0,0,0,0.1))
+			transition: all .25s ease-in
+			border: rem(1px) solid darken($bg-form-border-sdrt-input, 15%)				
+		&:required
+			@include box-shadow-two( 0 0  rem(5px) rem(2px) rgba(208,230,246,0.5), inset rem(1px) rem(1px) rem(6px) rem(1px) rgba(0,0,0,0.1))				
+			border: rem(1px) solid $bg-form-border-input				
+			&:hover,&:active,&:focus
+				@include box-shadow-two( 0 0  rem(5px) rem(4px) rgba(208,230,246,0.75), inset rem(1px) rem(1px) rem(6px) rem(1px) rgba(0,0,0,0.1))
+				outline: none
+				border: rem(1px) solid darken($bg-form-border-input, 15%)
+				transition: all .25s ease-in									
+.foooter-f
+	background-color: $bg-footer-form
+	height: rem(70px)
+	line-height: rem(70px)
+	width: 100%
+	margin-top: rem(35px)
+	border-top: rem(1px) solid $bg-footer-bortder-top
+	div
+		display: inline-block 
+		text-align: justify
+		&.left
+			float: left
+			width: 50%
+			text-align: center
+		&.right
+			float: right
+			width: 50%
+			text-align: center
+//Registration form
+.form-in.registration
+	.foooter-f
+		.left
+			a
+				color: $white
+				border-radius: rem(500px)
+				padding: rem(8px) rem(20px)
+				background-color: $bg-reg-form-butt-reg 
+				font-size: rem(13px)
+				border-bottom: rem(2px) solid darken($bg-reg-form-butt-reg, 5%)
+				@include box-shadow(0 rem(3px) rem(5px) 0 rgba(0,0,0,0.25))
+				transition: all .25s ease-out
+				&:hover,&:active,&:focus
+					text-decoration: none
+					@include box-shadow(0 rem(4px) rem(6px) 0 rgba(0,0,0,0.35))
+					background-color: lighten($bg-reg-form-butt-reg, 2%)
+					transition: all .25s ease-in
+		.right
+			a
+				color: $bg-reg-form-right-color
+				font-size: rem(13px)
+				border-bottom: rem(1px) solid $bg-reg-form-right-color
+				transition: all .25s ease-out
+				&:hover,&:active,&:focus						
+					transition: all .25s ease-in
+					color: lighten($bg-reg-form-right-color, 15%)
+					border-bottom: rem(1px) solid lighten($bg-reg-form-right-color, 15%)
+					padding: 0 rem(10px) rem(3px)
+					text-decoration: none
+//Registration form
+.form-in.login
+	a.remember-pass
+		font-size: rem(11px)
+		color: $bg-log-form-remeber-pass
+		float: right
+		line-height: rem(26px)
+		&:hover,&:active,&:focus
+			color: darken($bg-log-form-remeber-pass, 15%)
+	.foooter-f
+		.right
+			a
+				color: $white
+				border-radius: rem(500px)
+				padding: rem(8px) rem(20px)
+				background-color: $bg-log-form-login-butt-color
+				font-size: rem(13px)
+				border-bottom: rem(2px) solid darken($bg-log-form-login-butt-color, 5%)
+				@include box-shadow(0 rem(3px) rem(5px) 0 rgba(0,0,0,0.25))
+				transition: all .25s ease-out
+				&:hover,&:active,&:focus
+					text-decoration: none
+					@include box-shadow(0 rem(4px) rem(6px) 0 rgba(0,0,0,0.35))
+					background-color: lighten($bg-log-form-login-butt-color, 5%)
+					transition: all .25s ease-in
+		.left
+			a
+				color: $bg-reg-form-right-color
+				font-size: rem(13px)
+				border-bottom: rem(1px) solid $bg-reg-form-right-color
+				transition: all .25s ease-out
+				&:hover,&:active,&:focus						
+					transition: all .25s ease-in
+					color: lighten($bg-reg-form-right-color, 15%)
+					border-bottom: rem(1px) solid lighten($bg-reg-form-right-color, 15%)
+					padding: 0 rem(10px) rem(3px)
+					text-decoration: none					
+//Mobile Menu Topper
+.slideout-menu
+  position: fixed
+  top: 0
+  bottom: 0
+  width: 256px
+  min-height: 100vh
+  overflow-y: scroll
+  -webkit-overflow-scrolling: touch
+  z-index: 0
+  display: none
+.slideout-menu-left
+  left: 0
+.slideout-menu-right
+  right: 0
+.slideout-panel 
+  position: relative
+  z-index: 1
+  will-change: transform
+  background-color: #FFF /* A background-color is required */
+  min-height: 100vh
+.slideout-open, .slideout-open body, .slideout-open .slideout-panel
+  overflow: hidden
+.slideout-open .slideout-menu 
+  display: block

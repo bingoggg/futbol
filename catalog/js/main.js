@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+//Slider
    $(function() {
         $('.owl-carousel').owlCarousel({
             items: 1,
@@ -14,7 +15,7 @@ $( document ).ready(function() {
    $('.spoiler-menu').click(function() {
     $('ul.main-nav').toggleClass("active");
     });   
-   //Accordion
+//Accordion
 var acc = document.getElementsByClassName("accordion");
 var i;
 
@@ -29,5 +30,12 @@ for (i = 0; i < acc.length; i++) {
     } 
   }
 }
+//Slideout
+  var slideout = new Slideout({
+    'panel': document.getElementById('panel'),
+    'menu': document.getElementById('menu'),
+    'padding': 256,
+    'tolerance': 70
+  });
 });
 
