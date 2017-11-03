@@ -36,10 +36,27 @@ body
 //Header
 header.nav-top
   height: rem(86px)
+  @include respond-to($tablet-for-desktop)
+    height:  rem(106px)
   width: 100%
   overflow: hidden
   z-index: 99
   color: $white
+  .tablet-phone
+    display: none
+    @include respond-to($tablet-for-desktop)
+      display: block
+      background-color: $bg-top-phone
+      p 
+        font-size: rem(14px)
+        color: $black
+        text-align: right
+        @include font-weight(bold)
+        &:before 
+          content: "\e916"
+          font-family: 'FootIcons'
+          padding-right: rem(10px)
+          font-size: rem(12px)
   .nav
     line-height: rem(86px)
     text-align: justify
@@ -237,7 +254,6 @@ header.nav-top
 .mobile-top
   display: none
   @include respond-to ($tablet-portrait)
-    border-top: rem(1px) solid $gray
     padding-top: rem(15px)
     display: block
     background-color: $white
@@ -266,6 +282,9 @@ header.nav-top
     //text-align: center
     background-color: $bg-c1
     ul.main-nav
+      @include respond-to($tablet-portrait)
+        visibility: hidden
+        height: 0
       text-align: justify
       height: rem(65px)
       /*display: inline-table*/
@@ -336,6 +355,7 @@ header.nav-top
       &.active-mobile
         position: fixed
         top: rem(86px)
+        visibility: visible
         margin-top: rem(-1px)
         z-index: 	9999999999;
         height: auto
@@ -344,6 +364,8 @@ header.nav-top
           &.end-list
             display: none
   a.spoiler-menu
+    @include respond-to($tablet-portrait)
+      display: none
     font-size: rem(14px)
     color: $white
     padding: rem(3px) 0 rem(5px) 0
@@ -367,7 +389,6 @@ header.nav-top
     	background: url(/catalog/img/bg-left.png) top left no-repeat, url(/catalog/img/bg-right.png) top right no-repeat, url(/catalog/img/9.jpg) bottom left repeat;
     @include respond-to($tablet-portrait)
     	background: url(/catalog/img/9.jpg) bottom left repeat
-    padding-bottom: 30px
     .bg
       background-color: $white
       position: relative
@@ -1335,6 +1356,7 @@ footer.foooter
   background-image: url("/catalog/img/foot.jpg")
   -webkit-background-size: cover
   background-size: cover
+  margin-bottom: rem(30px)
   .pt-f
     padding-top: rem(35px)
     hr
