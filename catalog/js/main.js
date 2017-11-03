@@ -15,6 +15,17 @@ $( document ).ready(function() {
    $('.spoiler-menu').click(function() {
     $('ul.main-nav').toggleClass("active");
     });   
+//Toogle Mobile Menu
+    $("#mob-button").click(function() {
+     $(".main-nav").toggleClass( "active active-mobile" );
+    });
+//Search Mobile Animation
+    $( "#Search input" ).focus(function() {
+  $("#nav").addClass( "mob-search-active" );
+});
+    $( "#Search input" ).blur(function() {
+  $("#nav").removeClass( "mob-search-active" );
+});
 //Accordion
 var acc = document.getElementsByClassName("accordion");
 var i;
@@ -30,12 +41,6 @@ for (i = 0; i < acc.length; i++) {
     } 
   }
 }
-//Slideout
-  var slideout = new Slideout({
-    'panel': document.getElementById('panel'),
-    'menu': document.getElementById('menu'),
-    'padding': 256,
-    'tolerance': 70
-  });
+
 });
 

@@ -42,85 +42,184 @@ header.nav-top
   color: $white
   .nav
     line-height: rem(86px)
+    text-align: justify
+    &:before
+      content: ''
+      display: block
+      width: 100%
+      height: 0
+      @include respond-to($tablet-portrait)
+        display: none        
+    &:after 
+      width: 100%;
+      height: 0
+      visibility: hidden
+      overflow: hidden
+      content: ''
+      display: inline-block
+      @include respond-to($tablet-portrait)
+        display: none
+    @include respond-to($tablet-portrait)
+      position: fixed
+      width: 100%
+      background-color: $white
+      z-index: 9999999;
+      height: rem(86px)
+      @include box-shadow(0 rem(3px) rem(6px) 0 rgba(0,0,0,0.25))
       //Nav form Registration
-  .logo
-    a
-      padding: rem(15px) rem(50px)
-      font-size: rem(24px)
-      border: rem(1px) solid $default-color
-      border-radius: rem(5px)
-  .world-cup
-    margin-left: rem(36px)
-    @include respond-to($large-desktop-max)
-      display: none !important
-  .phone
-    margin-left: rem(32px)
-    @include respond-to($large-desktop-max)
-    	display: none !important
-    p.mob
-      font-size: rem(18px)
-      @include font-weight(bold)
-      color: $black
-      &:before
-        content: "\e916"
-        font-family: 'FootIcons'
-        padding-right: rem(15px)
-        font-size: rem(16px)
-  .callback
-    margin-left: rem(30px)
-    @include respond-to($large-desktop-max)
-    	margin-left: rem(36px)
-    a
-      font-size: rem(14px)
-      padding: rem(10px) rem(15px)
-      color: $white
-      @include linear-gradient-top(#2F4785,#3A59A6)
-      @include box-shadow(2px 2px 5px 0px rgba(0,0,0,0.1))
-      border-radius: rem(5px)
-      &:hover,&:active
-        @include linear-gradient-top(#25396B,#334e91)
-        text-decoration: none
-        @include box-shadow(2px 2px 5px 0px rgba(0,0,0,0.25))
-  .search
-    color: $black
-    margin-left: rem(25px)
-    @include respond-to($large-desktop-max)
-    	margin-left: rem(36px)
-    form 
-      i
-        position: absolute
-        pointer-events: none
-        color: $ico-search
-        font-size: rem(16px)
-        left: rem(10px)
-        top: rem(11px)
-      input[type="search"]
-        border: rem(1px) solid $border-search
-        border-radius: rem(5px)
-        padding: rem(8px) 0 rem(8px) rem(30px)
-        &:hover,&:active
-
-  .cart
-    color: $black
-    margin-left: rem(25px)
-    @include respond-to($large-desktop-max)
-    	margin-left: rem(36px)
-    font-weight: bold
-    font-size: rem(16px)
-    p
-      span
+    .logo      
+      a
+        padding: rem(15px) rem(50px)
+        font-size: rem(24px)
+        border: rem(1px) solid $default-color
+        border-radius: rem(5px)        
+        transition: all .25s ease-in   
+      @include respond-to($tablet-portrait)
+        margin: 0 auto
+    .world-cup
+      @include respond-to ($tablet-portrait)
+        display: none !important
+    .phone
+      @include respond-to ($tablet-portrait)
+        display: none !important
+      @include respond-to($large-desktop-max)
+        display: none !important
+      p.mob
         font-size: rem(18px)
-      span.count
-        position: absolute
-        float: right
-        margin-left: rem(-5px)
-        margin-top: rem(-10px)
-        padding: rem(3.5px) rem(7px)
-        font-size: rem(10px)
         @include font-weight(bold)
-        background-color: $link-hover-slider
+        color: $black
+        &:before
+          content: "\e916"
+          font-family: 'FootIcons'
+          padding-right: rem(15px)
+          font-size: rem(16px)
+    .callback
+      @include respond-to ($tablet-portrait)
+        display: none !important
+      @include respond-to($large-desktop-max)
+      	display: none !important
+      a
+        font-size: rem(14px)
+        padding: rem(10px) rem(15px)
         color: $white
-        border-radius: 50%
+        @include linear-gradient-top(#2F4785,#3A59A6)
+        @include box-shadow(2px 2px 5px 0px rgba(0,0,0,0.1))
+        border-radius: rem(5px)
+        &:hover,&:active
+          @include linear-gradient-top(#25396B,#334e91)
+          text-decoration: none
+          @include box-shadow(2px 2px 5px 0px rgba(0,0,0,0.25))
+    .search
+      color: $black
+      @include respond-to ($tablet-portrait)
+        position: absolute
+        right: rem(110px)
+        top: rem(26px)
+        transition: unset !important
+        form
+          i
+            color: $black !important
+            font-size: rem(25px) !important
+            top: rem(5px) !important
+            cursor: pointer
+            left: .225rem !important
+          input[type="search"] 
+            width: 0
+            border: none !important
+      form 
+        i
+          position: absolute
+          pointer-events: none
+          color: $ico-search
+          font-size: rem(16px)
+          left: rem(10px)
+          top: rem(10px)
+        input[type="search"]
+          border: rem(1px) solid $border-search
+          border-radius: rem(5px)
+          padding: rem(8px) 0 rem(8px) rem(30px)
+          transition: all .25s ease-out
+          &:hover,&:active,&:focus
+            outline: none
+            border: rem(1px) solid lighten($link-hover-slider,15%)
+            transition: all .25s ease-in
+          @include respond-to($tablet-portrait)
+            transition: unset !important
+    .cart
+      color: $black
+      font-weight: bold
+      font-size: rem(16px)
+      transition: all .25s ease-out
+      @include respond-to ($tablet-portrait)
+        position: absolute
+        right: rem(55px)
+        top: rem(17px)
+        padding: rem(15px)
+        a 
+         p
+            font-size: 0
+            span
+              font-size: rem(25px) !important
+            span.count
+              font-size: rem(14px) !important
+      a 
+        color: $black
+        &:hover,&:active,&:focus
+          color: lighten($black, 25%)
+          text-decoration: none
+          transition: all .25s ease-in
+          p 
+            span.count
+              background-color: lighten($link-hover-slider, 5%)
+              transition: all .25s ease-in
+        p
+          span
+            font-size: rem(18px)
+          span.count
+            position: absolute
+            float: right
+            margin-left: rem(-5px)
+            margin-top: rem(-10px)
+            padding: rem(3.5px) rem(7px)
+            font-size: rem(10px)
+            @include font-weight(bold)
+            background-color: $link-hover-slider
+            color: $white
+            border-radius: 50%
+            transition: all .25s ease-out
+    .mobile-menu-button 
+      @include respond-to ($tablet-portrait)
+        display: inline-block 
+        font-size: rem(30px)
+        position: absolute
+       	right: 0
+        top: rem(8px)
+        padding: rem(15px)
+        a 
+          color: $black
+          transition: all .25s ease-out
+          &:hover,&:active,&:focus
+            color: $link-hover-slider
+            transition: all .25s ease-in
+            text-decoration: none
+          &:after
+            content: '\f0c9'
+            font-family: 'FontAwesome' 
+    &.mob-search-active 
+      @include respond-to($tablet-portrait)
+        .logo,.cart,#mob-button
+          display: 	none
+        .search
+          width: 	100%
+          right: 	0
+          i
+            margin-left: 	rem(5px)
+          input
+            width: 	100% !important
+            padding-left: rem(40px) !important
+
+
+
   .ib
     display: inline-block
     position: relative
@@ -129,7 +228,31 @@ header.nav-top
       &.mid
         vertical-align: middle
 
-
+.mobile-top
+  display: none
+  @include respond-to ($tablet-portrait)
+    border-top: rem(1px) solid $gray
+    padding-top: rem(15px)
+    display: block
+    background-color: $white
+    padding: rem(15px) 0
+    ul 
+      li 
+        &:first-child 
+          text-align: center
+          padding-bottom: rem(15px)
+        &:nth-child(2)
+          text-align: center
+          font-size: rem(24px)
+          a
+            color: $black
+            &:before
+              content: "\e916"
+              font-family: 'FootIcons'
+              padding-right: rem(15px)
+              font-size: rem(16px)
+            &:hover,&:active,&:focus
+              color: $tab-blue
 //Main class
 .Main
   //Nav
@@ -202,6 +325,16 @@ header.nav-top
               right: rem(10px)
               top: rem(8px)
               font-size: rem(24px)
+          &.end-list
+            display: none
+      &.active-mobile
+        position: fixed
+        top: rem(86px)
+        margin-top: rem(-1px)
+        z-index: 	9999999999;
+        height: auto
+        background-color: $bg-c1
+        li 
           &.end-list
             display: none
   a.spoiler-menu
@@ -350,6 +483,8 @@ header.nav-top
       font-size rem(24px)
       @include font-weight(bold)
       margin: 0 0 rem(20px) 0
+      @include respond-to($phone)
+      	word-wrap: break-word
     //Tabs
     ul.tab
       overflow: hidden
@@ -1061,6 +1196,8 @@ header.nav-top
             img
               width: 100%
               height: rem(156px)
+              @include respond-to($bootsrap-tablet-max)
+              	height: 100%
           @include respond-to($tablet-portrait)
           &:first-child
             margin-left: 0
@@ -1178,6 +1315,8 @@ header.nav-top
               height: auto
               img
                 max-height: rem(300px)
+                @include respond-to($bootsrap-tablet-max)               
+                  max-height: 	100%
             header
             section
             footer
@@ -1439,7 +1578,7 @@ aside.sidebar
 					font-size: rem(16px)
 					border-bottom: 1px solid $border-bottom-aside
 					@include respond-to($bootsrap-tablet-max)
-					  font-size: rem(14px)
+					  font-size: rem(11px)
 					@include respond-to($tablet-portrait)
 					  font-size: rem(16px)
 					@include font-weight(bold)
@@ -1462,9 +1601,20 @@ aside.sidebar
 							font-size: rem(16px)
 							font-weight: bold
 							margin: 0 rem(10px)
+							@include respond-to($bootsrap-tablet-max)
+								font-size: rem(11px) !important
+							@include respond-to($tablet-portrait)
+								font-size: rem(16px) !important							
 						&.active
 							&:after
 								content: "\f106"
+						&+ul.submenu
+							&>li
+								font-size: rem(16px) !important
+								@include respond-to($bootsrap-tablet-max)
+									font-size: rem(11px) !important
+								@include respond-to($tablet-portrait)
+									font-size: rem(16px) !important
 						&.green
 							&:active, &:hover, &:focus, &.active
 								color: $black
@@ -1472,7 +1622,7 @@ aside.sidebar
 							&+ul
 								&.submenu
 									li
-										a
+										a											
 											background-color: $link-sidebar-green-bg
 											&:active, &:hover, &:focus, &.active
 												color: $black
@@ -1664,28 +1814,3 @@ hr.aside-hr
 					border-bottom: rem(1px) solid lighten($bg-reg-form-right-color, 15%)
 					padding: 0 rem(10px) rem(3px)
 					text-decoration: none					
-//Mobile Menu Topper
-.slideout-menu
-  position: fixed
-  top: 0
-  bottom: 0
-  width: 256px
-  min-height: 100vh
-  overflow-y: scroll
-  -webkit-overflow-scrolling: touch
-  z-index: 0
-  display: none
-.slideout-menu-left
-  left: 0
-.slideout-menu-right
-  right: 0
-.slideout-panel 
-  position: relative
-  z-index: 1
-  will-change: transform
-  background-color: #FFF /* A background-color is required */
-  min-height: 100vh
-.slideout-open, .slideout-open body, .slideout-open .slideout-panel
-  overflow: hidden
-.slideout-open .slideout-menu 
-  display: block

@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="catalog/plugins/bower/owl.carousel/dist/assets/owl.theme.default.min.css">
     <script src="catalog/plugins/bower/jquery/dist/jquery.min.js"></script>
     <script src="catalog/plugins/bower/owl.carousel/dist/owl.carousel.min.js"></script>
-    <script src="catalog/plugins/bower/slideout-master/dist/slideout.min.js"></script>
     <script src="catalog/js/main.js"></script>
 
 </head>
@@ -23,28 +22,18 @@
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
-                <!--Mobile Menu-->
-                <nav id="menu" class="visible-xs visible-sm">
-                  <header>
-                    <h2>Menu</h2>
-                  </header>
-                  <list>
-                      
-                  </list>
-                </nav>
-                <!-- Main -->
-                <div class="Main" id="panel">
-                    <header class="nav-top hidden-sm hidden-xs">
+                <div class="Main">
+                    <header class="nav-top">
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="row">                                       
-                                        <div class="nav">
+                                        <div id="nav" class="nav">
                                             <div class="logo ib lhn mid">
                                                 <a href="#">Logo</a>
                                             </div>
                                             <div class="world-cup ib lhn mid ">
-                                                <img src="catalog/img/10.png" width="193px" />
+                                                <a href="#"><img src="catalog/img/10.png" width="193px" /></a>
                                             </div>
                                             <div class="phone ib lhn mid">
                                                 <p class="mob">+7(499) 500-50-50</p>
@@ -52,25 +41,34 @@
                                             <div class="callback ib lhn mid">
                                                 <a href="#" title="">Обратный звонок</a>
                                             </div>
-                                            <div class="search ib lhn mid">
+                                            <div id="Search" class="search ib lhn mid">
                                                 <form action="#" method="get">
-                                                    <i class="fa fa-search" aria-hidden="true"></i><input type="search" placeholder="Поиск..." name="">
+                                                    <input type="search" placeholder="Поиск..." name=""><i class="fa fa-search" aria-hidden="true"></i>
                                                 </form>
                                             </div>
                                             <div class="cart ib lhn mid">
-                                                <p>Мои заказы <span class="footempty-shopping-cart"></span><span class="count">3</span></p>
+                                                <a href="#"><p>Мои заказы <span class="footempty-shopping-cart"></span><span class="count">3</span></p></a>
                                             </div>
-                                        </div>
+                                            <div id="mob-button" class="mobile-menu-button ib lhn mid">
+                                                <a href="javascript:void(0);"></a>
+                                            </div>                                                                                      
+                                        </div>                                       
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </header>
-                    <nav class="hidden-sm hidden-xs">
+                    <nav>
                         <div class="container hid">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="row">
+                                        <div class="mobile-top">             
+                                                <ul>
+                                                    <li><a href="#"><img src="catalog/img/10.png" width="193px" /></a></li>
+                                                    <li><a href="#">+7(499) 500-50-50</a></li>
+                                                </ul>                                   
+                                        </div>  
                                         <ul class="main-nav">
                                             <li><a href="#"><span class="footfootball-award-with-white-details"></span>ЧМ по футболу</a></li>
                                             <li><a href="#"><span class="footsoccer-world-competition-program-on-tv-monitor-screen"></span></span>Новости</a></li>
@@ -83,205 +81,79 @@
                                             <li class="end-list spoiler-menu"><a href="#"><i class="fa fa-circle-o" aria-hidden="true"></i><i class="fa fa-circle-o" aria-hidden="true"></i><i class="fa fa-circle-o" aria-hidden="true"></i></a></li>
                                         </ul>
                                     </div>
-                                    <!-- <ul class="out-nav">
-
-                                    </ul>-->
                                 </div>
                             </div>
                         </div>
                         <a class="spoiler-menu" href="#">ЕЩЕ</a>
                     </nav>
-                    <div class="Content">
-                        <div class="container">
-                            <div class="row bg">
-                                <section class="slider">
-                                    <div class="owl-carousel owl-theme">
-                                        <div class="item-c" style="background-image: url('catalog/img/3.jpg')">
-                                            <div class="text-about">
-                                                <p>Успей попасть на чемпионат мира по футболу 2018</p>
-                                                    <a href="#" class="button-sl">Поехать на WORLD CUP</a>
+                    <div class="Content">   
+                            <div class="container">
+                                <div class="row bg">
+                                    <section class="slider">
+                                        <div class="owl-carousel owl-theme">
+                                            <div class="item-c" style="background-image: url('catalog/img/3.jpg')">
+                                                <div class="text-about">
+                                                    <p>Успей попасть на чемпионат мира по футболу 2018</p>
+                                                        <a href="#" class="button-sl">Поехать на WORLD CUP</a>
+                                                </div>
+                                            </div>
+                                            <div class="item-c" style="background-image: url('catalog/img/6.jpg')">
+
                                             </div>
                                         </div>
-                                        <div class="item-c" style="background-image: url('catalog/img/6.jpg')">
-
-                                        </div>
-                                    </div>
-                                </section>
-                                <div class="col-sm-8">
-                                    <main role="main">
-                                        <h1>Новости футбола в мире</h1>
-                                        <!--mini-news-->
-                                        <div class="news mini-news clearfix">
-                                            <div class="block big-img">
-                                                <a href="#" title="Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров"><img src="catalog/img/1.jpg" width="100%"></a>
-                                            </div><!-- #left block mini-slider -->
-                                            <div class="block news-right">
-                                                <!-- Max count Mini-article 3 -->
-                                                <!-- Article -->
-                                                <article>
-                                                    <header>
-                                                        <h2><a href="#">Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров</a></h2>
-                                                    </header>
-                                                    <footer>
-                                                        <p>
-                                                            <time datetime="2017-10-1 19:00">01 октября 2017</time>
-                                                        </p>
-                                                    </footer>
-                                                </article> <!-- #Article -->
-                                                <!-- Article -->
-                                                <article>
-                                                    <header>
-                                                        <h2><a href="#">Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров</a></h2>
-                                                    </header>
-                                                    <footer>
-                                                        <p>
-                                                            <time datetime="2017-10-1 19:00">01 октября 2017</time>
-                                                        </p>
-                                                    </footer>
-                                                </article> <!-- #Article -->
-                                                <!-- Article -->
-                                                <article>
-                                                    <header>
-                                                        <h2><a href="#">Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров</a></h2>
-                                                    </header>
-                                                    <footer>
-                                                        <p>
-                                                            <time datetime="2017-10-1 19:00">01 октября 2017</time>
-                                                        </p>
-                                                    </footer>
-                                                </article> <!-- #Article -->
-                                            </div><!-- #right block news mini-news -->
-                                        </div><!-- #mini-news-->
-                                        <div class="news h-news"> <!-- Horizontally news Posts -->
-                                            <article>
-                                                <figure>
-                                                    <img src="catalog/img/4.jpg" alt="Чемпионат мира по футболу 2018 в России" width="100%">
-                                                </figure>
-                                                <header>
-                                                    <h2><a href="#">Чемпионат мира по футболу 2018 в России:</a></h2>
-                                                </header>
-                                                <section class="post-about">
-                                                    <p>
-                                                        Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров. Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров
-                                                    </p>
-                                                </section>
-                                                <footer>
-                                                    <p>
-                                                        <time datetime="2017-10-1 19:00">01 октября 2017</time>
-                                                    </p>
-                                                </footer>
-                                            </article>
-                                            <article>
-                                                <figure>
-                                                    <img src="catalog/img/8.jpg" alt="" width="100%">
-                                                </figure>
-                                                <header>
-                                                    <h2><a href="#">Чемпионат мира по футболу 2018 в России:</a></h2>
-                                                </header>
-                                                <section class="post-about">
-                                                    <p>
-                                                        Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров. Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров
-                                                    </p>
-                                                </section>
-                                                <footer>
-                                                    <p>
-                                                        <time datetime="2017-10-1 19:00">01 октября 2017</time>
-                                                    </p>
-                                                </footer>
-                                            </article>
-                                            <article>
-                                                <figure>
-                                                    <img src="catalog/img/2.jpg" alt="" width="100%">
-                                                </figure>
-                                                <header>
-                                                    <h2><a href="#">Чемпионат мира по футболу 2018 в России:</a></h2>
-                                                </header>
-                                                <section class="post-about">
-                                                    <p>
-                                                        Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров. Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров
-                                                    </p>
-                                                </section>
-                                                <footer>
-                                                    <p>
-                                                        <time datetime="2017-10-1 19:00">01 октября 2017</time>
-                                                    </p>
-                                                </footer>
-                                            </article>
-                                        </div><!-- #news horizont-news -->
-                                        <hr> <!-- Line After Posts -->
-                                        <!-- news v-news-->
-                                        <div class="news v-news">
-                                            <article class="clearfix">
-                                                <div class="left">
-                                                    <figure>
-                                                        <a href="#" title="«Россия – моя вторая родина»"><img src="catalog/img/1.jpg" alt="«Россия – моя вторая родина»" width="100%"></a>
-                                                    </figure>
-                                                </div>
-                                                <div class="right">
-                                                    <header>
-                                                        <h2><a href="#" >«Россия – моя вторая родина»</a></h2>
-                                                    </header>
-                                                    <section class="post-about">
-                                                        <p>Но кажется, именно это начинает происходить с ней в преддверии Чемпионата мира FIFA 2018 в России. Главный козырь сборной Сербии сейчас – единство, настаивает ее капитан Бранислав Иванович, который большую часть карьеры провел в «Челси», но уже полгода выступает за петербургский «Зенит». Но кажется, именно это начинает происходить с ней в преддверии Чемпионата мира FIFA 2018 в России. </p>
-                                                    </section>
-                                                    <footer>
-                                                        <p>
-                                                            <time datetime="2017-10-1 19:00">01 октября 2017</time>
-                                                        </p>
-                                                    </footer>
-                                                </div>
-                                            </article>
-                                            <article class="clearfix">
-                                                <div class="left">
-                                                    <figure>
-                                                        <a href="#" title="«Россия – моя вторая родина»"><img src="catalog/img/1.jpg" alt="«Россия – моя вторая родина»" width="100%"></a>
-                                                    </figure>
-                                                </div>
-                                                <div class="right">
-                                                    <header>
-                                                        <h2><a href="#" >«Россия – моя вторая родина»</a></h2>
-                                                    </header>
-                                                    <section class="post-about">
-                                                        <p>Но кажется, именно это начинает происходить с ней в преддверии Чемпионата мира FIFA 2018 в России. Главный козырь сборной Сербии сейчас – единство, настаивает ее капитан Бранислав Иванович, который большую часть карьеры провел в «Челси», но уже полгода выступает за петербургский «Зенит». Но кажется, именно это начинает происходить с ней в преддверии Чемпионата мира FIFA 2018 в России. </p>
-                                                    </section>
-                                                    <footer>
-                                                        <p>
-                                                            <time datetime="2017-10-1 19:00">01 октября 2017</time>
-                                                        </p>
-                                                    </footer>
-                                                </div>
-                                            </article>
-                                            <article class="clearfix">
-                                                <div class="left">
-                                                    <figure>
-                                                        <a href="#" title="«Россия – моя вторая родина»"><img src="catalog/img/1.jpg" alt="«Россия – моя вторая родина»" width="100%"></a>
-                                                    </figure>
-                                                </div>
-                                                <div class="right">
-                                                    <header>
-                                                        <h2><a href="#" >«Россия – моя вторая родина»</a></h2>
-                                                    </header>
-                                                    <section class="post-about">
-                                                        <p>Но кажется, именно это начинает происходить с ней в преддверии Чемпионата мира FIFA 2018 в России. Главный козырь сборной Сербии сейчас – единство, настаивает ее капитан Бранислав Иванович, который большую часть карьеры провел в «Челси», но уже полгода выступает за петербургский «Зенит». Но кажется, именно это начинает происходить с ней в преддверии Чемпионата мира FIFA 2018 в России. </p>
-                                                    </section>
-                                                    <footer>
-                                                        <p>
-                                                            <time datetime="2017-10-1 19:00">01 октября 2017</time>
-                                                        </p>
-                                                    </footer>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <hr>
-                                        <!-- news h-news h-blcok-->
-                                        <div class="news h-news h-block"><!-- Vertically news Posts -->
-                                            <a href="#">
+                                    </section>
+                                    <div class="col-sm-8">
+                                        <main role="main">
+                                            <h1>Новости футбола в мире</h1>
+                                            <!--mini-news-->
+                                            <div class="news mini-news clearfix">
+                                                <div class="block big-img">
+                                                    <a href="#" title="Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров"><img src="catalog/img/1.jpg" width="100%"></a>
+                                                </div><!-- #left block mini-slider -->
+                                                <div class="block news-right">
+                                                    <!-- Max count Mini-article 3 -->
+                                                    <!-- Article -->
+                                                    <article>
+                                                        <header>
+                                                            <h2><a href="#">Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров</a></h2>
+                                                        </header>
+                                                        <footer>
+                                                            <p>
+                                                                <time datetime="2017-10-1 19:00">01 октября 2017</time>
+                                                            </p>
+                                                        </footer>
+                                                    </article> <!-- #Article -->
+                                                    <!-- Article -->
+                                                    <article>
+                                                        <header>
+                                                            <h2><a href="#">Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров</a></h2>
+                                                        </header>
+                                                        <footer>
+                                                            <p>
+                                                                <time datetime="2017-10-1 19:00">01 октября 2017</time>
+                                                            </p>
+                                                        </footer>
+                                                    </article> <!-- #Article -->
+                                                    <!-- Article -->
+                                                    <article>
+                                                        <header>
+                                                            <h2><a href="#">Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров</a></h2>
+                                                        </header>
+                                                        <footer>
+                                                            <p>
+                                                                <time datetime="2017-10-1 19:00">01 октября 2017</time>
+                                                            </p>
+                                                        </footer>
+                                                    </article> <!-- #Article -->
+                                                </div><!-- #right block news mini-news -->
+                                            </div><!-- #mini-news-->
+                                            <div class="news h-news"> <!-- Horizontally news Posts -->
                                                 <article>
                                                     <figure>
-                                                        <img src="catalog/img/4.jpg" alt="Чемпионат мира по футболу 2018 в России:" width="100%">
+                                                        <img src="catalog/img/4.jpg" alt="Чемпионат мира по футболу 2018 в России" width="100%">
                                                     </figure>
                                                     <header>
-                                                        <h2>Чемпионат мира по футболу 2018 в России:</h2>
+                                                        <h2><a href="#">Чемпионат мира по футболу 2018 в России:</a></h2>
                                                     </header>
                                                     <section class="post-about">
                                                         <p>
@@ -294,14 +166,12 @@
                                                         </p>
                                                     </footer>
                                                 </article>
-                                            </a> <!--End a link -->
-                                            <a href="#">
                                                 <article>
                                                     <figure>
                                                         <img src="catalog/img/8.jpg" alt="" width="100%">
                                                     </figure>
                                                     <header>
-                                                        <h2>Чемпионат мира по футболу 2018 в России:</h2>
+                                                        <h2><a href="#">Чемпионат мира по футболу 2018 в России:</a></h2>
                                                     </header>
                                                     <section class="post-about">
                                                         <p>
@@ -314,14 +184,12 @@
                                                         </p>
                                                     </footer>
                                                 </article>
-                                            </a><!--End a link -->
-                                            <a href="#">
                                                 <article>
                                                     <figure>
                                                         <img src="catalog/img/2.jpg" alt="" width="100%">
                                                     </figure>
                                                     <header>
-                                                        <h2>Чемпионат мира по футболу 2018 в России:</h2>
+                                                        <h2><a href="#">Чемпионат мира по футболу 2018 в России:</a></h2>
                                                     </header>
                                                     <section class="post-about">
                                                         <p>
@@ -334,183 +202,310 @@
                                                         </p>
                                                     </footer>
                                                 </article>
-                                            </a><!--End a link -->
-                                        </div><!-- #news h-news h-block -->
-                                    </main><!-- #Main role="main" -->
-                                </div>
-                                <div class="col-sm-4">
-                                    <aside class="sidebar">
-                                        <p class="Day">Сегодня  01 октября 2017г. 20:37</p>
-                                        <section class="block">
-                                            <header>
-                                                <h3>Подготовка к ЧМ 2018</h3>
-                                            </header>
-                                            <p class="about-block">Автономная некоммерческая организация "Организационный комитет "Россия-2018" была учреждена правительством РФ 17 января 2011 года и создана специально для подготовки к проведению чемпионата мира по футболу в России.</p>
-                                            <footer>
-                                                <ul class="links">
-                                                    <li>ЧМ по футболу:</li>
-                                                    <li><a href="#">Билеты на матчи</a></li>
-                                                    <li class="accordion">Услуга "На матч" под ключ</li>
-                                                    <ul class="submenu">
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                    </ul>
-                                                    <li class="accordion yellow">Бронирование авиабилетов</li>
-                                                    <ul class="submenu">
-                                                        <li><a href="#">Анкета на бронирование</a></li>
-                                                    </ul>
-                                                    <li class="accordion">Трансферы</li>
-                                                    <ul class="submenu">
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                    </ul>
-                                                    <li class="accordion">Проживание наша забота</li>
-                                                    <ul class="submenu">
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                    </ul>
-                                                    <li class="accordion green">Вкусная еда на каждый день</li>
-                                                    <ul class="submenu">
-                                                        <li><a href="#">Русская кухня</a></li>
-                                                        <li><a href="#">Азиатская кухня</a></li>
-                                                        <li><a href="#">Континентальная кухня</a></li>
-                                                    </ul>
-                                                    <li class="accordion">Эксклюзив и развлечения</li>
-                                                    <ul class="submenu">
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                    </ul>
-                                                    <li class="accordion">Приглашения иностранцам</li>
-                                                    <ul class="submenu">
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                    </ul>
-                                                    <li class="accordion">Поможем поступить в ВУЗ</li>
-                                                    <ul class="submenu">
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                    </ul>
-                                                    <li class="accordion">Растаможка грузов в России</li>
-                                                    <ul class="submenu">
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                    </ul>
-                                                    <li class="accordion">Услуги переводчика</li>
-                                                    <ul class="submenu">
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                        <li><a href="#">Lorem Ipsum</a></li>
-                                                    </ul>
-                                                </ul>
-                                            </footer>
-                                        </section>
-                                        <hr class="aside-hr">
-                                        <section class="block">
-                                            <header>
-                                                <h3>Как поехать на ЧМ 2018?</h3>
-                                            </header>
-                                            <p class="about-block">Автономная некоммерческая организация "Организационный комитет "Россия-2018" была учреждена правительством РФ 17 января 2011 года и создана специально для подготовки к проведению чемпионата мира по футболу в России.</p>
-                                            <footer>
-                                                <ul class="links">
-                                                    <li>ЧМ по футболу</li>
-                                                    <li><a href="#">О Росии</a></li>
-                                                    <li><a href="#">Стадионы</a></li>
-                                                    <li><a href="#">Города</a></li>
-                                                    <li><a href="#">Как добраться</a></li>
-                                                    <li><a href="#">Культурная программа</a></li>
-                                                </ul>
-                                            </footer>
-                                        </section>
-                                    </aside><!-- #Aside -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <footer class="foooter">
-                        <div class="pt-f">
-                            <div class="container">
-                                <div class="row">
+                                            </div><!-- #news horizont-news -->
+                                            <hr> <!-- Line After Posts -->
+                                            <!-- news v-news-->
+                                            <div class="news v-news">
+                                                <article class="clearfix">
+                                                    <div class="left">
+                                                        <figure>
+                                                            <a href="#" title="«Россия – моя вторая родина»"><img src="catalog/img/1.jpg" alt="«Россия – моя вторая родина»" width="100%"></a>
+                                                        </figure>
+                                                    </div>
+                                                    <div class="right">
+                                                        <header>
+                                                            <h2><a href="#" >«Россия – моя вторая родина»</a></h2>
+                                                        </header>
+                                                        <section class="post-about">
+                                                            <p>Но кажется, именно это начинает происходить с ней в преддверии Чемпионата мира FIFA 2018 в России. Главный козырь сборной Сербии сейчас – единство, настаивает ее капитан Бранислав Иванович, который большую часть карьеры провел в «Челси», но уже полгода выступает за петербургский «Зенит». Но кажется, именно это начинает происходить с ней в преддверии Чемпионата мира FIFA 2018 в России. </p>
+                                                        </section>
+                                                        <footer>
+                                                            <p>
+                                                                <time datetime="2017-10-1 19:00">01 октября 2017</time>
+                                                            </p>
+                                                        </footer>
+                                                    </div>
+                                                </article>
+                                                <article class="clearfix">
+                                                    <div class="left">
+                                                        <figure>
+                                                            <a href="#" title="«Россия – моя вторая родина»"><img src="catalog/img/1.jpg" alt="«Россия – моя вторая родина»" width="100%"></a>
+                                                        </figure>
+                                                    </div>
+                                                    <div class="right">
+                                                        <header>
+                                                            <h2><a href="#" >«Россия – моя вторая родина»</a></h2>
+                                                        </header>
+                                                        <section class="post-about">
+                                                            <p>Но кажется, именно это начинает происходить с ней в преддверии Чемпионата мира FIFA 2018 в России. Главный козырь сборной Сербии сейчас – единство, настаивает ее капитан Бранислав Иванович, который большую часть карьеры провел в «Челси», но уже полгода выступает за петербургский «Зенит». Но кажется, именно это начинает происходить с ней в преддверии Чемпионата мира FIFA 2018 в России. </p>
+                                                        </section>
+                                                        <footer>
+                                                            <p>
+                                                                <time datetime="2017-10-1 19:00">01 октября 2017</time>
+                                                            </p>
+                                                        </footer>
+                                                    </div>
+                                                </article>
+                                                <article class="clearfix">
+                                                    <div class="left">
+                                                        <figure>
+                                                            <a href="#" title="«Россия – моя вторая родина»"><img src="catalog/img/1.jpg" alt="«Россия – моя вторая родина»" width="100%"></a>
+                                                        </figure>
+                                                    </div>
+                                                    <div class="right">
+                                                        <header>
+                                                            <h2><a href="#" >«Россия – моя вторая родина»</a></h2>
+                                                        </header>
+                                                        <section class="post-about">
+                                                            <p>Но кажется, именно это начинает происходить с ней в преддверии Чемпионата мира FIFA 2018 в России. Главный козырь сборной Сербии сейчас – единство, настаивает ее капитан Бранислав Иванович, который большую часть карьеры провел в «Челси», но уже полгода выступает за петербургский «Зенит». Но кажется, именно это начинает происходить с ней в преддверии Чемпионата мира FIFA 2018 в России. </p>
+                                                        </section>
+                                                        <footer>
+                                                            <p>
+                                                                <time datetime="2017-10-1 19:00">01 октября 2017</time>
+                                                            </p>
+                                                        </footer>
+                                                    </div>
+                                                </article>
+                                            </div>
+                                            <hr>
+                                            <!-- news h-news h-blcok-->
+                                            <div class="news h-news h-block"><!-- Vertically news Posts -->
+                                                <a href="#">
+                                                    <article>
+                                                        <figure>
+                                                            <img src="catalog/img/4.jpg" alt="Чемпионат мира по футболу 2018 в России:" width="100%">
+                                                        </figure>
+                                                        <header>
+                                                            <h2>Чемпионат мира по футболу 2018 в России:</h2>
+                                                        </header>
+                                                        <section class="post-about">
+                                                            <p>
+                                                                Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров. Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров
+                                                            </p>
+                                                        </section>
+                                                        <footer>
+                                                            <p>
+                                                                <time datetime="2017-10-1 19:00">01 октября 2017</time>
+                                                            </p>
+                                                        </footer>
+                                                    </article>
+                                                </a> <!--End a link -->
+                                                <a href="#">
+                                                    <article>
+                                                        <figure>
+                                                            <img src="catalog/img/8.jpg" alt="" width="100%">
+                                                        </figure>
+                                                        <header>
+                                                            <h2>Чемпионат мира по футболу 2018 в России:</h2>
+                                                        </header>
+                                                        <section class="post-about">
+                                                            <p>
+                                                                Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров. Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров
+                                                            </p>
+                                                        </section>
+                                                        <footer>
+                                                            <p>
+                                                                <time datetime="2017-10-1 19:00">01 октября 2017</time>
+                                                            </p>
+                                                        </footer>
+                                                    </article>
+                                                </a><!--End a link -->
+                                                <a href="#">
+                                                    <article>
+                                                        <figure>
+                                                            <img src="catalog/img/2.jpg" alt="" width="100%">
+                                                        </figure>
+                                                        <header>
+                                                            <h2>Чемпионат мира по футболу 2018 в России:</h2>
+                                                        </header>
+                                                        <section class="post-about">
+                                                            <p>
+                                                                Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров. Чемпионат мира по футболу 2018 в России: расписание и результаты отборочных туров
+                                                            </p>
+                                                        </section>
+                                                        <footer>
+                                                            <p>
+                                                                <time datetime="2017-10-1 19:00">01 октября 2017</time>
+                                                            </p>
+                                                        </footer>
+                                                    </article>
+                                                </a><!--End a link -->
+                                            </div><!-- #news h-news h-block -->
+                                        </main><!-- #Main role="main" -->
+                                    </div>
                                     <div class="col-sm-4">
-                                        <div class="foooter-col-1">
-                                            <h4 class="name-site">World cup 2018</h4>
-                                            <p class="about-site">Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке,  а начинающему оратору отточить навык публичных</p>
-                                            <div class="social">
-                                                <p>Мы в соцсетях</p>
-                                                <ul class="social-links">
-                                                    <li><a href="#" title="#"><i class="fa fa-vk"></i></a></li>
-                                                    <li><a href="#" title="#"><i class="fa fa-facebook"></i></a></li>
-                                                    <li><a href="#" title="#"><i class="fa fa-instagram"></i></a></li>
-                                                    <li><a href="#" title="#"><i class="fa fa-youtube-play"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                        <aside class="sidebar">
+                                            <p class="Day">Сегодня  01 октября 2017г. 20:37</p>
+                                            <section class="block">
+                                                <header>
+                                                    <h3>Подготовка к ЧМ 2018</h3>
+                                                </header>
+                                                <p class="about-block">Автономная некоммерческая организация "Организационный комитет "Россия-2018" была учреждена правительством РФ 17 января 2011 года и создана специально для подготовки к проведению чемпионата мира по футболу в России.</p>
+                                                <footer>
+                                                    <ul class="links">
+                                                        <li>ЧМ по футболу:</li>
+                                                        <li><a href="#">Билеты на матчи</a></li>
+                                                        <li class="accordion">Услуга "На матч" под ключ</li>
+                                                        <ul class="submenu">
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                        </ul>
+                                                        <li class="accordion yellow">Бронирование авиабилетов</li>
+                                                        <ul class="submenu">
+                                                            <li><a href="#">Анкета на бронирование</a></li>
+                                                        </ul>
+                                                        <li class="accordion">Трансферы</li>
+                                                        <ul class="submenu">
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                        </ul>
+                                                        <li class="accordion">Проживание наша забота</li>
+                                                        <ul class="submenu">
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                        </ul>
+                                                        <li class="accordion green">Вкусная еда на каждый день</li>
+                                                        <ul class="submenu">
+                                                            <li><a href="#">Русская кухня</a></li>
+                                                            <li><a href="#">Азиатская кухня</a></li>
+                                                            <li><a href="#">Континентальная кухня</a></li>
+                                                        </ul>
+                                                        <li class="accordion">Эксклюзив и развлечения</li>
+                                                        <ul class="submenu">
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                        </ul>
+                                                        <li class="accordion">Приглашения иностранцам</li>
+                                                        <ul class="submenu">
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                        </ul>
+                                                        <li class="accordion">Поможем поступить в ВУЗ</li>
+                                                        <ul class="submenu">
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                        </ul>
+                                                        <li class="accordion">Растаможка грузов в России</li>
+                                                        <ul class="submenu">
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                        </ul>
+                                                        <li class="accordion">Услуги переводчика</li>
+                                                        <ul class="submenu">
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                            <li><a href="#">Lorem Ipsum</a></li>
+                                                        </ul>
+                                                    </ul>
+                                                </footer>
+                                            </section>
+                                            <hr class="aside-hr">
+                                            <section class="block">
+                                                <header>
+                                                    <h3>Как поехать на ЧМ 2018?</h3>
+                                                </header>
+                                                <p class="about-block">Автономная некоммерческая организация "Организационный комитет "Россия-2018" была учреждена правительством РФ 17 января 2011 года и создана специально для подготовки к проведению чемпионата мира по футболу в России.</p>
+                                                <footer>
+                                                    <ul class="links">
+                                                        <li>ЧМ по футболу</li>
+                                                        <li><a href="#">О Росии</a></li>
+                                                        <li><a href="#">Стадионы</a></li>
+                                                        <li><a href="#">Города</a></li>
+                                                        <li><a href="#">Как добраться</a></li>
+                                                        <li><a href="#">Культурная программа</a></li>
+                                                    </ul>
+                                                </footer>
+                                            </section>
+                                        </aside><!-- #Aside -->
                                     </div>
-                                    <div class="col-sm-2">
-                                        <div class="foooter-col-2">
-                                            <h5>Партнерам</h5>
-                                            <div class="pages">
-                                                <ul class="pages-links">
-                                                    <li><a href="">О компании</a></li>
-                                                    <li><a href="">Политика конфиденциальности</a></li>
-                                                    <li><a href="">Сертификаты</a></li>
-                                                    <li><a href="">Наши реквизиты</a></li>
-                                                    <li><a href="">Сотрудничество</a></li>
-                                                    <li><a href="">Контакты</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="foooter-col-3">
-                                            <h5>Болельщикам</h5>
-                                            <div class="pages pages-2">
-                                                <ul class="pages-links">
-                                                    <li><a href="">Как заказать?</a></li>
-                                                    <li><a href="">Регистрация</a></li>
-                                                    <li><a href="">Способ оплаты</a></li>
-                                                    <li><a href="">Доставка</a></li>
-                                                    <li><a href="">Скачать каталог</a></li>
-                                                    <li><a href="">Обмен и отказ</a></li>
-                                                    <li><a href="">Публичная оферта</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="contacts">
-                                            <p class="phone"><a href="tel:+74995005050">+7 (499) 500-50-50</a></p>
-                                            <p class="callback"><a href="#">Обратный звонок</a></p>
-                                            <ul class="adress">
-                                                <li>Офис продаж:</li>
-                                                <li>г.Москва, ул,</li>
-                                                <li>Московская, д.1</li>
-                                            </ul>
-                                            <ul class="time-work">
-                                                <li>Время работы:</li>
-                                                <li>Пн.-Пт. с 10 до 18</li>
-                                            </ul>
-                                            <address>
-                                                <a href="mailto:sergkabanov777@gmail.com">sergkabanov777@gmail.com</a>
-                                            </address>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <hr>
-                                        <div class="copyright">
-                                            <p> © ХХХХХХХХХ.ХХ Все права на материалы, размещенные на сайте, защищены законодательством об авторском праве и смежных правах и могут быть воспроизведены лишь при условии публикации активной ссылки на главную страницу проекта ХХХХХХХ.ХХ рядом с использованными материалами. Горячая линия +ХХ ХХХХХ ХХ ХХ. По поводу технических проблем обращайтесь ХХ ХХХХХ ХХ ХХ Срок, в течение которого действует предложение о заключении договора не ограничен, если иное не указано на сайте.</p>
-                                        </div>
                                 </div>
                             </div>
-                        </div>
-                    </footer>
+                        <footer class="foooter">
+                            <div class="pt-f">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="foooter-col-1">
+                                                <h4 class="name-site">World cup 2018</h4>
+                                                <p class="about-site">Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке,  а начинающему оратору отточить навык публичных</p>
+                                                <div class="social">
+                                                    <p>Мы в соцсетях</p>
+                                                    <ul class="social-links">
+                                                        <li><a href="#" title="#"><i class="fa fa-vk"></i></a></li>
+                                                        <li><a href="#" title="#"><i class="fa fa-facebook"></i></a></li>
+                                                        <li><a href="#" title="#"><i class="fa fa-instagram"></i></a></li>
+                                                        <li><a href="#" title="#"><i class="fa fa-youtube-play"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="foooter-col-2">
+                                                <h5>Партнерам</h5>
+                                                <div class="pages">
+                                                    <ul class="pages-links">
+                                                        <li><a href="">О компании</a></li>
+                                                        <li><a href="">Политика конфиденциальности</a></li>
+                                                        <li><a href="">Сертификаты</a></li>
+                                                        <li><a href="">Наши реквизиты</a></li>
+                                                        <li><a href="">Сотрудничество</a></li>
+                                                        <li><a href="">Контакты</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="foooter-col-3">
+                                                <h5>Болельщикам</h5>
+                                                <div class="pages pages-2">
+                                                    <ul class="pages-links">
+                                                        <li><a href="">Как заказать?</a></li>
+                                                        <li><a href="">Регистрация</a></li>
+                                                        <li><a href="">Способ оплаты</a></li>
+                                                        <li><a href="">Доставка</a></li>
+                                                        <li><a href="">Скачать каталог</a></li>
+                                                        <li><a href="">Обмен и отказ</a></li>
+                                                        <li><a href="">Публичная оферта</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="contacts">
+                                                <p class="phone"><a href="tel:+74995005050">+7 (499) 500-50-50</a></p>
+                                                <p class="callback"><a href="#">Обратный звонок</a></p>
+                                                <ul class="adress">
+                                                    <li>Офис продаж:</li>
+                                                    <li>г.Москва, ул,</li>
+                                                    <li>Московская, д.1</li>
+                                                </ul>
+                                                <ul class="time-work">
+                                                    <li>Время работы:</li>
+                                                    <li>Пн.-Пт. с 10 до 18</li>
+                                                </ul>
+                                                <address>
+                                                    <a href="mailto:sergkabanov777@gmail.com">sergkabanov777@gmail.com</a>
+                                                </address>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <hr>
+                                            <div class="copyright">
+                                                <p> © ХХХХХХХХХ.ХХ Все права на материалы, размещенные на сайте, защищены законодательством об авторском праве и смежных правах и могут быть воспроизведены лишь при условии публикации активной ссылки на главную страницу проекта ХХХХХХХ.ХХ рядом с использованными материалами. Горячая линия +ХХ ХХХХХ ХХ ХХ. По поводу технических проблем обращайтесь ХХ ХХХХХ ХХ ХХ Срок, в течение которого действует предложение о заключении договора не ограничен, если иное не указано на сайте.</p>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>                    
                 </div><!-- #Main -->
             </div>
         </div>
