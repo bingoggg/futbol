@@ -18,6 +18,7 @@ $( document ).ready(function() {
 //Toogle Mobile Menu
     $("#mob-button").click(function() {
      $(".main-nav").toggleClass( "active active-mobile" );
+     $("#mob-button").toggleClass("active");
     });
 //Search Mobile Animation
     $( "#Search input" ).focus(function() {
