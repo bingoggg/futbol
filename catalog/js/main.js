@@ -14,6 +14,7 @@ $( document ).ready(function() {
     });
    $('.spoiler-menu').click(function() {
     $('ul.main-nav').toggleClass("active");
+    $(this).toggleClass("active");
     });   
 //Toogle Mobile Menu
     $("#mob-button").click(function() {

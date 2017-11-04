@@ -38,6 +38,8 @@ header.nav-top
   height: rem(86px)
   @include respond-to($tablet-for-desktop)
     height:  rem(106px)
+    position: fixed
+    background-color: #fff
   width: 100%
   overflow: hidden
   z-index: 99
@@ -280,6 +282,11 @@ header.nav-top
   //Nav
   nav
     //text-align: center
+    @include respond-to($tablet-for-desktop)
+      position: fixed
+      width: 	100%
+      z-index: 99999;
+      top: rem(106px)
     background-color: $bg-c1
     ul.main-nav
       @include respond-to($tablet-portrait)
@@ -364,8 +371,16 @@ header.nav-top
           &.end-list
             display: none
   a.spoiler-menu
+    &.active
+      @include respond-to($tablet-for-desktop)
+        top: rem(425px)
     @include respond-to($tablet-portrait)
       display: none
+    @include respond-to($tablet-for-desktop)
+      position: fixed
+      top: rem(171px)
+      width: 100%
+      z-index: 9999999999;
     font-size: rem(14px)
     color: $white
     padding: rem(3px) 0 rem(5px) 0
@@ -385,6 +400,9 @@ header.nav-top
   //Content class
   .Content
     background: url(/catalog/img/bg2.png) top center no-repeat, url(/catalog/img/9.jpg) bottom left repeat;
+    padding-bottom: rem(30px)
+    @include respond-to($tablet-for-desktop)
+      padding-top: rem(199px)    
     @include respond-to($large-desktop-max)
     	background: url(/catalog/img/bg-left.png) top left no-repeat, url(/catalog/img/bg-right.png) top right no-repeat, url(/catalog/img/9.jpg) bottom left repeat;
     @include respond-to($tablet-portrait)
@@ -405,7 +423,7 @@ header.nav-top
             height: inherit
             .item-c
               height: inherit
-              background-size: cover
+              background-size: contain
               background-position: 50%
               position: relative
               .text-about
@@ -1356,7 +1374,6 @@ footer.foooter
   background-image: url("/catalog/img/foot.jpg")
   -webkit-background-size: cover
   background-size: cover
-  margin-bottom: rem(30px)
   .pt-f
     padding-top: rem(35px)
     hr
@@ -1446,6 +1463,8 @@ footer.foooter
         font-size: rem(18px)
       @include respond-to($tablet-portrait)
         font-size: rem(20px)
+      @include respond-to($tablet-for-desktop)
+        font-size: rem(16px)        
       a
         color: $white
     p.callback
@@ -1534,6 +1553,8 @@ footer.foooter
         @include respond-to($tablet-portrait)
           font-size: rem(18px)
           padding-right: rem(10px)
+        @include respond-to($tablet-landscape)
+          display: none
 
 
       a
